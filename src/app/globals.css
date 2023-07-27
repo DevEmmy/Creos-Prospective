@@ -2,26 +2,118 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+.header {
+  @apply font-bold text-6xl capitalize sm:text-3xl;
+}
+.tickets {
+  @apply bg-primary10 shadow-sm shadow-black p-5 flex justify-center items-center gap-3 text-primary1 rounded-2xl cursor-pointer;
+}
+.card {
+  @apply flex justify-center items-center gap-3 w-[15em] h-[7em] rounded-2xl cursor-pointer;
+}
+.menu {
+  @apply px-2 py-2 w-full hover:bg-black rounded-[0.5em] text-black hover:text-white transition-colors duration-300;
+}
+.flexbm {
+  @apply flex justify-between items-start;
+}
+.flexbs {
+  @apply flex justify-between items-start;
+}
+.flexbe {
+  @apply flex justify-between items-end;
+}
+.flexam {
+  @apply flex justify-around items-center;
+}
+.flexmm {
+  @apply flex justify-center items-center;
+}
+.flexem {
+  @apply flex justify-end items-center;
+}
+.flexme {
+  @apply flex justify-center items-end;
+}
+.flexsm {
+  @apply flex justify-start items-center;
+}
+.flexms {
+  @apply flex justify-center items-start;
+}
+.flexss {
+  @apply flex justify-start items-start;
+}
+.flexse {
+  @apply flex justify-start items-end;
+}
+.flexes {
+  @apply flex justify-end items-start;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+.cflexbm {
+  @apply flex flex-col justify-between items-center;
+}
+.cflexbs {
+  @apply flex justify-between items-start;
+}
+.cflexbe {
+  @apply flex justify-between items-end;
+}
+.cflexam {
+  @apply flex flex-col justify-around items-center;
+}
+.cflexmm {
+  @apply flex flex-col justify-center items-center;
+}
+.cflexem {
+  @apply flex flex-col justify-end items-center;
+}
+.cflexme {
+  @apply flex flex-col justify-center items-end;
+}
+.cflexsm {
+  @apply flex flex-col justify-start items-center;
+}
+.cflexms {
+  @apply flex flex-col justify-center items-start;
+}
+.cflexss {
+  @apply flex flex-col justify-start items-start;
+}
+.cflexse {
+  @apply flex flex-col justify-start items-end;
+}
+.cflexes {
+  @apply flex flex-col justify-end items-start;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  scroll-behavior: smooth;
+  scroll-snap-type: proximity;
 }
+
+img,
+video {
+  object-fit: cover;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+/* input:checked+div {
+    @apply border-theme-color;
+}
+
+input:checked+div svg {
+    @apply block;
+} */
