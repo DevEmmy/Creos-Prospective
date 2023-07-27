@@ -7,15 +7,6 @@
 .header {
   @apply font-bold text-6xl capitalize sm:text-3xl;
 }
-.tickets {
-  @apply bg-primary10 shadow-sm shadow-black p-5 flex justify-center items-center gap-3 text-primary1 rounded-2xl cursor-pointer;
-}
-.card {
-  @apply flex justify-center items-center gap-3 w-[15em] h-[7em] rounded-2xl cursor-pointer;
-}
-.menu {
-  @apply px-2 py-2 w-full hover:bg-black rounded-[0.5em] text-black hover:text-white transition-colors duration-300;
-}
 .flexbm {
   @apply flex justify-between items-start;
 }
