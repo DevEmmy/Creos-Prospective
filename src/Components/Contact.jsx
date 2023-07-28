@@ -119,7 +119,7 @@ const Contact = () => {
           </div>
         </div>
 
-        <div className="flexms h-[100%] w-1/2 px-[5%]">
+        <div className="flexms h-[100%] w-1/2 px-[4%]">
           <div className="cflexss gap-[1em] w-[100%] p-[1.5em] px-[2em] bg-primary2">
             <h1 className="text-primary1 font-[700] text-[1.5rem] w-[60%]">
               Get in touch with us & let's talk
