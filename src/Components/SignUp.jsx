@@ -196,7 +196,7 @@ const SignUp = () => {
                     onChange={handleChange}
                   />
                 </div>
-                {emailError && <p className="err">*invalid email format!</p>}
+                {emailError && <p className="err">* Fill in a valid email</p>}
               </div>
 
               <div className="sect">
@@ -213,7 +213,7 @@ const SignUp = () => {
                   />
                 </div>
                 {exceedChar === "school" && (
-                  <p className="err">*can't exceed 50 characters</p>
+                  <p className="err">* Can't exceed 50 characters</p>
                 )}
               </div>
 
@@ -230,7 +230,7 @@ const SignUp = () => {
                     onChange={handleChange}
                   />
                 </div>
-                {phoneError && <p className="err">*invalid phone format!</p>}
+                {phoneError && <p className="err">* Fill in a valid phone number</p>}
               </div>
 
               {error && (
