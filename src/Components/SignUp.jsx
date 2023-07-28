@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import "react-phone-input-2/lib/style.css";
 import PhoneInput from "react-phone-input-2";
+import { EyeOutline, EyeOffOutline } from "heroicons-react";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -11,11 +12,11 @@ const SignUp = () => {
   const fName = useRef(null);
   const [valid, setValid] = useState(false);
   const [changing, setChanging] = useState(false);
-  const [error, setError] = useState(true);
   const [emailError, setEmailError] = useState(false);
   const [phoneError, setPhoneError] = useState(false);
   const [exceedChar, setExceedChar] = useState(false);
-  const [numbValid, setNumbValid] = useState(false);
+  const [passError, setPassError] = useState(false);
+  const [hide, setHide] = useState(true);
   const [userDetails, setUserDetails] = useState({
     fullName: "",
     email: "",
@@ -35,13 +36,10 @@ const SignUp = () => {
       EMAIL_REGEX.test(userDetails["email"]) &&
       userDetails["school"].trim().length > 0 &&
       PHONE_REGEX.test(userDetails["phoneNumber"]) &&
-      userDetails["password"].length >= 8 &&
-      numbValid
+      userDetails["password"].length >= 8
     ) {
-      setError(false);
       setValid(true);
     } else {
-      setError(true);
       setValid(false);
     }
     if (
@@ -174,7 +172,7 @@ const SignUp = () => {
                     className="input"
                     type="text"
                     name="fullName"
-                    placeholder="E.g FirstName LastName"
+                    placeholder="E.g First Name Last Name Other Name"
                     value={userDetails["fullName"]}
                     ref={fName}
                     onChange={handleChange}
@@ -224,7 +222,7 @@ const SignUp = () => {
                 <PhoneInput
                   country={"ng"} // Default country code (optional)
                   inputStyle={{
-                    minWidth: "38em",
+                    minWidth: "43em",
                     color: "#AAA",
                     fontSize: "0.7em",
                     fontWeight: "400",
@@ -238,12 +236,48 @@ const SignUp = () => {
                     setUserDetails({ ...userDetails, country });
                   }} // Handle phone number changes
                 />
+
                 {phoneError && (
                   <p className="err">* Fill in a valid phone number</p>
                 )}
               </div>
 
-              {error && (
+              <div className="sect">
+                <p>Password</p>
+                <div className="inputCont">
+                  <input
+                    className="input"
+                    type={hide ? "password" : "text"}
+                    name="password"
+                    placeholder="Password"
+                    value={userDetails["password"]}
+                    ref={fName}
+                    onChange={handleChange}
+                  />
+                  {hide ? (
+                    <EyeOutline
+                      className="w-5 h-5 text-gray-500 cursor-pointer"
+                      onClick={() => {
+                        setHide(!hide);
+                      }}
+                    />
+                  ) : (
+                    <EyeOffOutline
+                      className="w-5 h-5 text-gray-500 cursor-pointer"
+                      onClick={() => {
+                        setHide(!hide);
+                      }}
+                    />
+                  )}
+                </div>
+                {passError && (
+                  <p className="err">
+                    * Password should be at least 8 characters long
+                  </p>
+                )}
+              </div>
+
+              {!valid && (
                 <div className="err">
                   <p>*All fields are required.</p>
                 </div>
