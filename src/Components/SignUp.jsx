@@ -136,7 +136,7 @@ const SignUp = () => {
   return (
     <>
       <div className="h-full w-full flexss">
-        <div className="w-[45%] h-full bg-primary1 pt-[4em] pb-[6em] px-[5em] text-primary2">
+        <div className="w-[45%] h-full bg-primary1 pt-[4em] pb-[6em] px-[7%] text-primary2">
           <div className="cflexss gap-[1.5em]">
             <Link href="/" className="w-[15em]">
               <Image src="logo.svg" width={100} height={100} alt="CSkidz" />
@@ -182,7 +182,7 @@ const SignUp = () => {
           </div>
         </div>
 
-        <div className="w-[55%] h-full bg-white pt-[4em] pb-[4em] pl-[6em] pr-[7em]">
+        <div className="w-[55%] h-full bg-white pt-[4em] pb-[4em] px-[8%]">
           <div className="cflexss w-full gap-[0.7em]">
             <h1 className="text-[1.7rem] font-[700] text-primary3">
               Create an Account
@@ -192,7 +192,7 @@ const SignUp = () => {
               of discovery and learning! Sign up today to unlock a world of
               educational adventures for your child.
             </p>
-            <form className="cflexss gap-[1em] w-full">
+            <form className="cflexss gap-[1em] w-full" onSubmit={handleSubmit}>
               <div className="sect">
                 <p>Full name</p>
                 <div className="inputCont">
@@ -219,11 +219,11 @@ const SignUp = () => {
                     type="text"
                     name="email"
                     placeholder="E.g annette.black@example.com"
-                    value={userDetails["email"]}                  
+                    value={userDetails["email"]}
                     onChange={handleChange}
                   />
                 </div>
-                {emailError && <p className="err">* Fill in a valid email</p>}
+                {emailError && <p className="err">* Fill in a valid email address</p>}
               </div>
 
               <div className="sect">
@@ -234,7 +234,7 @@ const SignUp = () => {
                     type="text"
                     name="school"
                     placeholder="School Name"
-                    value={userDetails["school"]}                    
+                    value={userDetails["school"]}
                     onChange={handleChange}
                   />
                 </div>
@@ -248,7 +248,7 @@ const SignUp = () => {
                 <PhoneInput
                   country={"ng"} // Default country code (optional)
                   inputStyle={{
-                    minWidth: "43em",
+                    minWidth: "100%",
                     color: "#AAA",
                     fontSize: "0.7em",
                     fontWeight: "400",
@@ -281,7 +281,7 @@ const SignUp = () => {
                     type={hide ? "password" : "text"}
                     name="password"
                     placeholder="Password"
-                    value={userDetails["password"]}                    
+                    value={userDetails["password"]}
                     onChange={handleChange}
                   />
                   {hide ? (
@@ -316,8 +316,7 @@ const SignUp = () => {
 
               <button
                 type="submit"
-                className="flexmm gap-[0.5em] rounded-full bg-primary1 px-[2.5em] py-[1em] text-white text-[0.8em] font-[600]"
-                onClick={handleSubmit}
+                className="flexmm gap-[0.5em] rounded-[2em] bg-primary1 px-[2.5em] py-[1em] text-white text-[0.8em] font-[600]"                
               >
                 <p>Create account</p>
                 <ArrowRightOutline size="12px" />
