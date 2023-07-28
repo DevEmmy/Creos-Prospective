@@ -1,13 +1,9 @@
-'use client'
-import { useRouter } from "next/navigation"
-import SignUp from "@/Components/SignUp"
+"use client";
+import SignIn from "@/Components/SignIn";
 export default function Home() {
-  const router = useRouter()
-  const Id = router.query  
   return (
     <>
-    {Id === "signup" && <SignUp/>}    
-    {Id === "signin" && <SignIn/>}  
+      <SignIn />
     </>
-  )
+  );
 }

@@ -120,7 +120,7 @@ const SignUp = () => {
     e.preventDefault();
     if (valid) {
       console.log("submitted");
-      console.log(userDetails)
+      console.log(userDetails);
       setUserDetails({
         fullName: "",
         email: "",
@@ -219,8 +219,7 @@ const SignUp = () => {
                     type="text"
                     name="email"
                     placeholder="E.g annette.black@example.com"
-                    value={userDetails["email"]}
-                    ref={fName}
+                    value={userDetails["email"]}                  
                     onChange={handleChange}
                   />
                 </div>
@@ -235,8 +234,7 @@ const SignUp = () => {
                     type="text"
                     name="school"
                     placeholder="School Name"
-                    value={userDetails["school"]}
-                    ref={fName}
+                    value={userDetails["school"]}                    
                     onChange={handleChange}
                   />
                 </div>
@@ -260,9 +258,13 @@ const SignUp = () => {
                   }}
                   value={userDetails["phoneNumber"]} // Initial phone number value (optional)
                   onChange={(value, country, event) => {
-                    var name = event.target.name                    
-                    setUserDetails({ ...userDetails, [name]:value, country:country.name });                        
-                    setChanging(!changing)                
+                    var name = event.target.name;
+                    setUserDetails({
+                      ...userDetails,
+                      [name]: value,
+                      country: country.name,
+                    });
+                    setChanging(!changing);
                   }} // Handle phone number changes
                 />
 
@@ -279,8 +281,7 @@ const SignUp = () => {
                     type={hide ? "password" : "text"}
                     name="password"
                     placeholder="Password"
-                    value={userDetails["password"]}
-                    ref={fName}
+                    value={userDetails["password"]}                    
                     onChange={handleChange}
                   />
                   {hide ? (
@@ -322,6 +323,16 @@ const SignUp = () => {
                 <ArrowRightOutline size="12px" />
               </button>
             </form>
+            <div className="text-[0.7rem] font-[400]">
+              <p>
+                Already have an account?{" "}
+                <Link href="/signin">
+                  <span className="text-primary1 font-[700] cursor-pointer">
+                    Log In
+                  </span>
+                </Link>
+              </p>
+            </div>
           </div>
         </div>
       </div>
