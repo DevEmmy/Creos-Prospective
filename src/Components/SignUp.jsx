@@ -136,7 +136,7 @@ const SignUp = () => {
   return (
     <>
       <div className="h-full w-full flexss">
-        <div className="w-[45%] h-full bg-primary1 pt-[4em] pb-[6em] px-[5em] text-primary2">
+        <div className="w-[45%] h-full bg-primary1 pt-[4em] pb-[6em] px-[7%] text-primary2">
           <div className="cflexss gap-[1.5em]">
             <Link href="/" className="w-[15em]">
               <Image src="logo.svg" width={100} height={100} alt="CSkidz" />
@@ -182,7 +182,7 @@ const SignUp = () => {
           </div>
         </div>
 
-        <div className="w-[55%] h-full bg-white pt-[4em] pb-[4em] pl-[6em] pr-[7em]">
+        <div className="w-[55%] h-full bg-white pt-[4em] pb-[4em] px-[8%]">
           <div className="cflexss w-full gap-[0.7em]">
             <h1 className="text-[1.7rem] font-[700] text-primary3">
               Create an Account
@@ -245,10 +245,10 @@ const SignUp = () => {
 
               <div className="sect">
                 <p>Phone Number</p>
-                <PhoneInput
+                <PhoneInput                
                   country={"ng"} // Default country code (optional)
                   inputStyle={{
-                    minWidth: "43em",
+                    minWidth: "100%",
                     color: "#AAA",
                     fontSize: "0.7em",
                     fontWeight: "400",
