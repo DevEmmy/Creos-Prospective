@@ -1,4 +1,7 @@
 import { useState, useRef, useEffect } from "react";
+import "react-phone-input-2/lib/style.css";
+import PhoneInput from "react-phone-input-2";
+import Link from "next/link";
 import Image from "next/image";
 
 const SignUp = () => {
@@ -19,6 +22,7 @@ const SignUp = () => {
     school: "",
     phoneNumber: "",
     password: "",
+    country: "",
   });
 
   useEffect(() => {
@@ -93,8 +97,6 @@ const SignUp = () => {
     var value = e.target.value;
     if (name === "fullName" || name === "school") {
       acceptLettersOnly(name, value, 50);
-    } else if (name === "phoneNumber") {
-      acceptNumbersOnly(name, value, 50);
     } else {
       setUserDetails({ ...userDetails, [name]: value });
       setChanging(!changing);
@@ -110,9 +112,9 @@ const SignUp = () => {
       <div className="w-full h-full flexss overflow-auto">
         <div className="w-[45%] h-full bg-primary1 py-[4em] px-[5em] text-primary2">
           <div className="cflexss gap-[1.5em]">
-            <div className="w-[15em]">
+            <Link href="/" className="w-[15em]">
               <Image src="logo.svg" width={100} height={100} alt="CSkidz" />
-            </div>
+            </Link>
             <div>
               <h1 className="text-[2.3rem] font-[800]">
                 Welcome to CuriousKidz!
@@ -219,18 +221,26 @@ const SignUp = () => {
 
               <div className="sect">
                 <p>Phone Number</p>
-                <div className="inputCont">
-                  <input
-                    className="input"
-                    type="text"
-                    name="phoneNumber"
-                    placeholder="Phone Number"
-                    value={userDetails["phoneNumber"]}
-                    ref={fName}
-                    onChange={handleChange}
-                  />
-                </div>
-                {phoneError && <p className="err">* Fill in a valid phone number</p>}
+                <PhoneInput
+                  country={"ng"} // Default country code (optional)
+                  inputStyle={{
+                    minWidth: "38em",
+                    color: "#AAA",
+                    fontSize: "0.7em",
+                    fontWeight: "400",
+                  }}
+                  inputProps={{
+                    name: "phoneNumber", // Set the name property of the input element
+                  }}
+                  value={userDetails["phoneNumber"]} // Initial phone number value (optional)
+                  onChange={(value, country, event) => {
+                    acceptNumbersOnly(event.target.name, value, 50);
+                    setUserDetails({ ...userDetails, country });
+                  }} // Handle phone number changes
+                />
+                {phoneError && (
+                  <p className="err">* Fill in a valid phone number</p>
+                )}
               </div>
 
               {error && (
