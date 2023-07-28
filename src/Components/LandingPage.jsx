@@ -12,6 +12,9 @@ const LandingPage = () => {
         <Link href="/signin">
           <li className="underline cursor-pointer p-[1em]"> Login Page </li>          
         </Link>
+        <Link href="/contact">
+          <li className="underline cursor-pointer p-[1em]"> Contact Page </li>          
+        </Link>
       </ul>
     </>
   );

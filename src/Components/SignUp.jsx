@@ -192,7 +192,7 @@ const SignUp = () => {
               of discovery and learning! Sign up today to unlock a world of
               educational adventures for your child.
             </p>
-            <form className="cflexss gap-[1em] w-full">
+            <form className="cflexss gap-[1em] w-full" onSubmit={handleSubmit}>
               <div className="sect">
                 <p>Full name</p>
                 <div className="inputCont">
@@ -219,7 +219,7 @@ const SignUp = () => {
                     type="text"
                     name="email"
                     placeholder="E.g annette.black@example.com"
-                    value={userDetails["email"]}                  
+                    value={userDetails["email"]}
                     onChange={handleChange}
                   />
                 </div>
@@ -234,7 +234,7 @@ const SignUp = () => {
                     type="text"
                     name="school"
                     placeholder="School Name"
-                    value={userDetails["school"]}                    
+                    value={userDetails["school"]}
                     onChange={handleChange}
                   />
                 </div>
@@ -245,7 +245,7 @@ const SignUp = () => {
 
               <div className="sect">
                 <p>Phone Number</p>
-                <PhoneInput                
+                <PhoneInput
                   country={"ng"} // Default country code (optional)
                   inputStyle={{
                     minWidth: "100%",
@@ -281,7 +281,7 @@ const SignUp = () => {
                     type={hide ? "password" : "text"}
                     name="password"
                     placeholder="Password"
-                    value={userDetails["password"]}                    
+                    value={userDetails["password"]}
                     onChange={handleChange}
                   />
                   {hide ? (
@@ -316,8 +316,7 @@ const SignUp = () => {
 
               <button
                 type="submit"
-                className="flexmm gap-[0.5em] rounded-[2em] bg-primary1 px-[2.5em] py-[1em] text-white text-[0.8em] font-[600]"
-                onClick={handleSubmit}
+                className="flexmm gap-[0.5em] rounded-[2em] bg-primary1 px-[2.5em] py-[1em] text-white text-[0.8em] font-[600]"                
               >
                 <p>Create account</p>
                 <ArrowRightOutline size="12px" />
