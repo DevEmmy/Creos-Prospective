@@ -1,14 +1,9 @@
 import { useState, useRef, useEffect } from "react";
-import "react-phone-input-2/lib/style.css";
-import PhoneInput from "react-phone-input-2";
 import { EyeOutline, EyeOffOutline, ArrowRightOutline } from "heroicons-react";
 import Link from "next/link";
 import Image from "next/image";
 
 const SignIn = () => {
-  const EMAIL_REGEX = /^(\w+)([\.\-]?\w+)*\@(\w+)([\.\-]?\w+)*(\.[a-z|A-Z]+)$/;
-  const PHONE_REGEX =
-    /^([+]?[(]?[0-9]{1,3}?[)]?)?\(?([0-9]{3,4})\)?[\-\.\ ]?([0-9]{3,4})[\-\.\ ]?([0-9]{4})$/;
   const eMail = useRef(null);
   const [valid, setValid] = useState(false);
   const [changing, setChanging] = useState(false);
@@ -57,7 +52,7 @@ const SignIn = () => {
   return (
     <>
       <div className="w-full h-full flexss overflow-auto">
-        <div className="w-[45%] h-full bg-primary1 py-[4em] px-[5em] text-primary2">
+        <div className="w-[45%] h-full bg-primary1 pt-[4em] pb-[6em] px-[5em] text-primary2">
           <div className="cflexss gap-[1.5em]">
             <Link href="/" className="w-[15em]">
               <Image src="logo.svg" width={100} height={100} alt="CSkidz" />
@@ -167,7 +162,7 @@ const SignIn = () => {
                   <input type="checkbox" />
                   <p>Remember me</p>
                 </div>
-                <p className="text-primary1">Forgot password?</p>
+                <p className="text-primary1 cursor-pointer">Forgot password?</p>
               </div>
 
               <button
