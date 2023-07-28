@@ -8,7 +8,7 @@
   @apply flex flex-col justify-start items-start gap-[0.5em] font-[600] text-[0.8rem] min-w-[35em];
 }
 .inputCont {
-  @apply flex border border-[1px] border-[#AAA] rounded-[0.5rem] justify-between items-center p-[1em] w-full;
+  @apply flex border border-[1px] border-[#AAA] rounded-[0.5rem] justify-center items-center p-[1em] w-full;
 }
 .input{
   @apply border border-none outline-none font-[400] w-full pl-[0.5em];

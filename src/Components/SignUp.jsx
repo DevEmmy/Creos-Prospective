@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import "react-phone-input-2/lib/style.css";
 import PhoneInput from "react-phone-input-2";
-import { EyeOutline, EyeOffOutline } from "heroicons-react";
+import { EyeOutline, EyeOffOutline, ArrowRightOutline } from "heroicons-react";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -33,10 +33,10 @@ const SignUp = () => {
   useEffect(() => {
     if (
       userDetails["fullName"].trim().length > 0 &&
-      EMAIL_REGEX.test(userDetails["email"]) &&
+      !emailError &&
       userDetails["school"].trim().length > 0 &&
-      PHONE_REGEX.test(userDetails["phoneNumber"]) &&
-      userDetails["password"].length >= 8
+      !phoneError &&
+      !passError
     ) {
       setValid(true);
     } else {
@@ -64,6 +64,20 @@ const SignUp = () => {
       userDetails["phoneNumber"].trim().length > 0
     ) {
       setPhoneError(true);
+    }
+
+    if (
+      (userDetails["password"].length >= 8 &&
+        /[!@#$%^&*]/.test(userDetails["password"])) ||
+      userDetails["password"].length === 0
+    ) {
+      setPassError(false);
+    } else if (
+      (userDetails["password"].length !== 0 &&
+        userDetails["password"].length < 8) ||
+      !/[!@#$%^&*]/.test(userDetails["password"])
+    ) {
+      setPassError(true);
     }
   }, [changing]);
 
@@ -271,8 +285,9 @@ const SignUp = () => {
                   )}
                 </div>
                 {passError && (
-                  <p className="err">
-                    * Password should be at least 8 characters long
+                  <p className="text-primary1 text-[0.7rem] font-[400] flex flex-wrap w-[30em]">
+                    * Password should be at least 8 characters long and must
+                    contain at least one character
                   </p>
                 )}
               </div>
@@ -282,6 +297,14 @@ const SignUp = () => {
                   <p>*All fields are required.</p>
                 </div>
               )}
+
+              <button
+                className="flexmm gap-[0.5em] rounded-[2em] bg-primary1 px-[2.5em] py-[1em] text-white text-[0.8em] font-[600]"
+                onSubmit={handleSubmit}
+              >
+                <p>Create account</p>
+                <ArrowRightOutline size="12px" />
+              </button>
             </form>
           </div>
         </div>
