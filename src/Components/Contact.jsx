@@ -80,7 +80,7 @@ const Contact = () => {
   return (
     <>
       <div className="flexss px-[6%] py-[4em] bg-primary6 h-full">
-        <div className="flex flex-col justify-between items-start h-[100%] w-1/2 py-[3em] text-primary3 text-[0.8rem]">
+        <div className="flex flex-col justify-between items-start h-[100%] w-1/2 py-[4em] text-primary3 text-[0.8rem]">
           <div className="w-full cflexss gap-[1em]">
             <h1 className="font-[700] text-[1.7rem]">Contact Us</h1>
             <p className="w-[90%]">
@@ -90,7 +90,7 @@ const Contact = () => {
             </p>
           </div>
 
-          <div className="w-full cflexss gap-[1em] pt-[15em]">
+          <div className="w-full cflexss gap-[2em] pt-[18em]">
             <div className="w-full flexbm flex-wrap">
               <div className="cfledxdmm gap-[0.5em] w-[70%]">
                 <p className="font-[700] text-[1rem]">Business Hours:</p>
@@ -195,6 +195,10 @@ const Contact = () => {
                 {exceedChar === "message" && (
                   <p className="err">*can't exceed 150 characters</p>
                 )}
+              </div>
+              <div className="flexsm w-full gap-[1em] text-[0.7rem] text-primary4 font-[400]">                
+                  <input type="checkbox" />
+                  <p>you agree to our friendly <span>privacy policy</span></p>                
               </div>
               <button
                 type="submit"

@@ -223,7 +223,7 @@ const SignUp = () => {
                     onChange={handleChange}
                   />
                 </div>
-                {emailError && <p className="err">* Fill in a valid email</p>}
+                {emailError && <p className="err">* Fill in a valid email address</p>}
               </div>
 
               <div className="sect">
