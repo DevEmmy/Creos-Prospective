@@ -54,7 +54,7 @@ const Contact = () => {
     if (name === "firstName" || name === "lastName") {
       acceptLettersOnly(name, value, 50);
     } else if (name === "message") {
-      acceptLettersOnly(name, value, 150);
+      acceptLettersOnly(name, value, 300);
     } else {
       setUserDetails({ ...userDetails, [name]: value });
       setChanging(!changing);
@@ -79,8 +79,8 @@ const Contact = () => {
 
   return (
     <>
-      <div className="flexss px-[7%] py-[4em] bg-primary6 h-screen">
-        <div className="flex flex-col justify-between items-start h-full w-1/2 py-[3em] text-primary3 text-[0.8rem]">
+      <div className="flexss px-[6%] py-[4em] bg-primary6 h-full">
+        <div className="flex flex-col justify-between items-start h-[100%] w-1/2 py-[3em] text-primary3 text-[0.8rem]">
           <div className="w-full cflexss gap-[1em]">
             <h1 className="font-[700] text-[1.7rem]">Contact Us</h1>
             <p className="w-[90%]">
@@ -90,7 +90,7 @@ const Contact = () => {
             </p>
           </div>
 
-          <div className="w-full cflexss gap-[1em]">
+          <div className="w-full cflexss gap-[1em] pt-[15em]">
             <div className="w-full flexbm flex-wrap">
               <div className="cfledxdmm gap-[0.5em] w-[70%]">
                 <p className="font-[700] text-[1rem]">Business Hours:</p>
@@ -181,11 +181,26 @@ const Contact = () => {
                   <p className="err">* Fill in a valid email address</p>
                 )}
               </div>
+              <div className="cflexss gap-[0.5em] w-full">
+                <p>Message</p>
+                <div className="inputCont2">
+                  <textarea
+                    className="input h-[10em] resize-none"
+                    type="text"
+                    name="message"
+                    value={userDetails["message"]}
+                    onChange={handleChange}
+                  />
+                </div>
+                {exceedChar === "message" && (
+                  <p className="err">*can't exceed 150 characters</p>
+                )}
+              </div>
               <button
                 type="submit"
-                className="w-full py-3 px-5 bg-[#8B04CB] font-semibold cursor-pointer"
+                className="w-full py-3 px-5 bg-primary1 font-[700] cursor-pointer rounded-xl text-primary2"
               >
-                SUBMIT
+                Send message
               </button>
             </form>
           </div>

@@ -167,7 +167,7 @@ const SignIn = () => {
 
               <button
                 type="submit"
-                className="flexmm gap-[0.5em] rounded-[2em] bg-primary1 px-[2.5em] py-[1em] text-white text-[0.8em] font-[600]"                
+                className="flexmm gap-[0.5em] rounded-[2em] bg-primary1 px-[2.5em] py-[1em] text-white text-[0.8em] font-[600]"
               >
                 <p>Sign In</p>
                 <ArrowRightOutline size="12px" />
@@ -194,30 +194,6 @@ const SignIn = () => {
                   />
                 </div>
                 <p>Sign in with Google</p>
-              </div>
-
-              <div className="box">
-                <div className="w-[1.5em]">
-                  <Image
-                    src="facebook.svg"
-                    width={100}
-                    height={100}
-                    alt="facebook"
-                  />
-                </div>
-                <p>Sign in with Facebook</p>
-              </div>
-
-              <div className="box">
-                <div className="w-[1.5em]">
-                  <Image
-                    src="microsoft.svg"
-                    width={100}
-                    height={100}
-                    alt="microsoft"
-                  />
-                </div>
-                <p>Sign in with Microsoft</p>
               </div>
             </div>
           </div>
