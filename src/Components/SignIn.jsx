@@ -12,7 +12,7 @@ const SignIn = () => {
   const eMail = useRef(null);
   const [valid, setValid] = useState(false);
   const [changing, setChanging] = useState(false);
-  const [emailError, setEmailError] = useState(false);  
+  const [emailError, setEmailError] = useState(false);
   const [hide, setHide] = useState(true);
   const [loginDetails, setLoginDetails] = useState({
     email: "",
@@ -24,21 +24,21 @@ const SignIn = () => {
   }, []);
 
   useEffect(() => {
-    if (     
-      loginDetails["email"].trim().length > 0 &&      
-      loginDetails["password"].trim().length > 0      
+    if (
+      loginDetails["email"].trim().length > 0 &&
+      loginDetails["password"].trim().length > 0
     ) {
       setValid(true);
     } else {
       setValid(false);
-    }        
+    }
   }, [changing]);
-  
+
   const handleChange = (e) => {
     var name = e.target.name;
     var value = e.target.value;
     setLoginDetails({ ...loginDetails, [name]: value });
-    setChanging(!changing);  
+    setChanging(!changing);
   };
 
   const handleSubmit = (e) => {
@@ -46,9 +46,9 @@ const SignIn = () => {
     if (valid) {
       console.log("submitted");
       console.log(loginDetails);
-      setLoginDetails({        
-        email: "",    
-        password: "",        
+      setLoginDetails({
+        email: "",
+        password: "",
       });
 
       // ENDPOINT FOR SUBMITTING LOGIN DETAILS
@@ -110,7 +110,7 @@ const SignIn = () => {
               Sign in to continue your learning journey and explore a world of
               endless possibilities.
             </p>
-            <form className="cflexss gap-[1em] w-full">              
+            <form className="cflexss gap-[1em] w-full">
               <div className="sect">
                 <p>Email address</p>
                 <div className="inputCont">
@@ -126,7 +126,6 @@ const SignIn = () => {
                 </div>
                 {emailError && <p className="err">* Fill in a valid email</p>}
               </div>
-                                            
 
               <div className="sect">
                 <p>Password</p>
@@ -136,7 +135,7 @@ const SignIn = () => {
                     type={hide ? "password" : "text"}
                     name="password"
                     placeholder="Password"
-                    value={loginDetails["password"]}                    
+                    value={loginDetails["password"]}
                     onChange={handleChange}
                   />
                   {hide ? (
@@ -154,7 +153,7 @@ const SignIn = () => {
                       }}
                     />
                   )}
-                </div>                
+                </div>
               </div>
 
               {!valid && (
@@ -162,6 +161,14 @@ const SignIn = () => {
                   <p>*All fields are required.</p>
                 </div>
               )}
+
+              <div className="flexbm w-[93%] text-[0.8rem]">
+                <div className="flexmm gap-[0.5em]">
+                  <input type="checkbox" />
+                  <p>Remember me</p>
+                </div>
+                <p className="text-primary1">Forgot password?</p>
+              </div>
 
               <button
                 type="submit"
@@ -181,6 +188,43 @@ const SignIn = () => {
                   </span>
                 </Link>
               </p>
+            </div>
+            <div className="flexsm flex-wrap gap-[1em] font-[400] text-[0.8rem] text-[#344054] w-[93%]">
+              <div className="box">
+                <div className="w-[1.5em]">
+                  <Image
+                    src="google.svg"
+                    width={100}
+                    height={100}
+                    alt="google"
+                  />
+                </div>
+                <p>Sign in with Google</p>
+              </div>
+
+              <div className="box">
+                <div className="w-[1.5em]">
+                  <Image
+                    src="facebook.svg"
+                    width={100}
+                    height={100}
+                    alt="facebook"
+                  />
+                </div>
+                <p>Sign in with Facebook</p>
+              </div>
+
+              <div className="box">
+                <div className="w-[1.5em]">
+                  <Image
+                    src="microsoft.svg"
+                    width={100}
+                    height={100}
+                    alt="microsoft"
+                  />
+                </div>
+                <p>Sign in with Microsoft</p>
+              </div>
             </div>
           </div>
         </div>
