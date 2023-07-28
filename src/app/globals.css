@@ -13,6 +13,9 @@
 .input{
   @apply border border-none outline-none font-[400] w-full;
 }
+.err{
+  @apply text-red-500 text-[0.7rem] font-[400];
+}
 .flexbm {
   @apply flex justify-between items-start;
 }

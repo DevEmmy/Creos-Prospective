@@ -9,6 +9,8 @@ const SignUp = () => {
   const [valid, setValid] = useState(false);
   const [changing, setChanging] = useState(false);
   const [error, setError] = useState(true);
+  const [emailError, setEmailError] = useState(false);
+  const [phoneError, setPhoneError] = useState(false);
   const [exceedChar, setExceedChar] = useState(false);
   const [numbValid, setNumbValid] = useState(false);
   const [userDetails, setUserDetails] = useState({
@@ -38,10 +40,33 @@ const SignUp = () => {
       setError(true);
       setValid(false);
     }
+    if (
+      EMAIL_REGEX.test(userDetails["email"]) ||
+      userDetails["email"].trim().length === 0
+    ) {
+      setEmailError(false);
+    } else if (
+      !EMAIL_REGEX.test(userDetails["email"]) &&
+      userDetails["email"].trim().length > 0
+    ) {
+      setEmailError(true);
+    }
+
+    if (
+      PHONE_REGEX.test(userDetails["phoneNumber"]) ||
+      userDetails["phoneNumber"].trim().length === 0
+    ) {
+      setPhoneError(false);
+    } else if (
+      !PHONE_REGEX.test(userDetails["phoneNUmber"]) &&
+      userDetails["phoneNumber"].trim().length > 0
+    ) {
+      setPhoneError(true);
+    }
   }, [changing]);
 
   const acceptNumbersOnly = (name, value, max) => {
-    var numeric = /^[0-9]+$/;
+    var numeric = /^[0-9|+()]+$/;
 
     if ((numeric.test(value) && value.length <= max) || value.length === 0) {
       setUserDetails({ ...userDetails, [name]: value });
@@ -66,10 +91,13 @@ const SignUp = () => {
   const handleChange = (e) => {
     var name = e.target.name;
     var value = e.target.value;
-    if (name === "fullName") {
+    if (name === "fullName" || name === "school") {
       acceptLettersOnly(name, value, 50);
     } else if (name === "phoneNumber") {
       acceptNumbersOnly(name, value, 50);
+    } else {
+      setUserDetails({ ...userDetails, [name]: value });
+      setChanging(!changing);
     }
   };
 
@@ -126,7 +154,7 @@ const SignUp = () => {
           </div>
         </div>
 
-        <div className="w-[55%] h-full bg-white py-[4em] px-[6em]">
+        <div className="w-[55%] h-full bg-white py-[4em] pl-[6em] pr-[7em]">
           <div className="cflexss w-full gap-[0.7em]">
             <h1 className="text-[1.7rem] font-[700] text-primary3">
               Create an Account
@@ -151,15 +179,66 @@ const SignUp = () => {
                   />
                 </div>
                 {exceedChar === "fullName" && (
-                  <p id="err">*can't exceed 50 characters</p>
+                  <p className="err">*can't exceed 50 characters</p>
                 )}
-              </div>              
+              </div>
+
+              <div className="sect">
+                <p>Email address</p>
+                <div className="inputCont">
+                  <input
+                    className="input"
+                    type="text"
+                    name="email"
+                    placeholder="E.g annette.black@example.com"
+                    value={userDetails["email"]}
+                    ref={fName}
+                    onChange={handleChange}
+                  />
+                </div>
+                {emailError && <p className="err">*invalid email format!</p>}
+              </div>
+
+              <div className="sect">
+                <p>School</p>
+                <div className="inputCont">
+                  <input
+                    className="input"
+                    type="text"
+                    name="school"
+                    placeholder="School Name"
+                    value={userDetails["school"]}
+                    ref={fName}
+                    onChange={handleChange}
+                  />
+                </div>
+                {exceedChar === "school" && (
+                  <p className="err">*can't exceed 50 characters</p>
+                )}
+              </div>
+
+              <div className="sect">
+                <p>Phone Number</p>
+                <div className="inputCont">
+                  <input
+                    className="input"
+                    type="text"
+                    name="phoneNumber"
+                    placeholder="Phone Number"
+                    value={userDetails["phoneNumber"]}
+                    ref={fName}
+                    onChange={handleChange}
+                  />
+                </div>
+                {phoneError && <p className="err">*invalid phone format!</p>}
+              </div>
+
               {error && (
                 <div className="err">
                   <p>*All fields are required.</p>
                 </div>
               )}
-            </form>            
+            </form>
           </div>
         </div>
       </div>
