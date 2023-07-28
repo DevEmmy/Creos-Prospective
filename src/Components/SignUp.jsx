@@ -36,7 +36,8 @@ const SignUp = () => {
       !emailError &&
       userDetails["school"].trim().length > 0 &&
       !phoneError &&
-      !passError
+      !passError &&
+      userDetails["password"].length >= 8
     ) {
       setValid(true);
     } else {
@@ -115,8 +116,21 @@ const SignUp = () => {
     }
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
     if (valid) {
+      console.log("submitted");
+      console.log(userDetails)
+      setUserDetails({
+        fullName: "",
+        email: "",
+        school: "",
+        phoneNumber: "",
+        password: "",
+        country: "",
+      });
+
+      // ENDPOINT FOR SUBMITTING USER DETAILS
     }
   };
   return (
@@ -246,8 +260,9 @@ const SignUp = () => {
                   }}
                   value={userDetails["phoneNumber"]} // Initial phone number value (optional)
                   onChange={(value, country, event) => {
-                    acceptNumbersOnly(event.target.name, value, 50);
-                    setUserDetails({ ...userDetails, country });
+                    var name = event.target.name                    
+                    setUserDetails({ ...userDetails, [name]:value, country:country.name });                        
+                    setChanging(!changing)                
                   }} // Handle phone number changes
                 />
 
@@ -299,8 +314,9 @@ const SignUp = () => {
               )}
 
               <button
+                type="submit"
                 className="flexmm gap-[0.5em] rounded-[2em] bg-primary1 px-[2.5em] py-[1em] text-white text-[0.8em] font-[600]"
-                onSubmit={handleSubmit}
+                onClick={handleSubmit}
               >
                 <p>Create account</p>
                 <ArrowRightOutline size="12px" />
