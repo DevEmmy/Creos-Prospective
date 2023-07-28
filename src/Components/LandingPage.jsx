@@ -6,7 +6,7 @@ const LandingPage = () => {
   return (
     <>
       <ul style={{ listStyleType: "none" }}>
-        <Link href="/auth">
+        <Link href="/auth/signup">
           <li style={{ cursor: "pointer" }}> Create Account Page </li>
         </Link>
       </ul>
