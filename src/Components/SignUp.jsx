@@ -316,7 +316,7 @@ const SignUp = () => {
 
               <button
                 type="submit"
-                className="flexmm gap-[0.5em] rounded-[2em] bg-primary1 px-[2.5em] py-[1em] text-white text-[0.8em] font-[600]"
+                className="flexmm gap-[0.5em] rounded-full bg-primary1 px-[2.5em] py-[1em] text-white text-[0.8em] font-[600]"
                 onClick={handleSubmit}
               >
                 <p>Create account</p>
