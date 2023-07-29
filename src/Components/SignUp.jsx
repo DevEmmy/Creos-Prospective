@@ -118,9 +118,7 @@ const SignUp = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (valid) {
-      console.log("submitted");
-      console.log(userDetails);
+    if (valid) {     
       setUserDetails({
         fullName: "",
         email: "",

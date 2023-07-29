@@ -22,8 +22,7 @@ const Contact = () => {
       userDetails["lastName"].trim().length > 0 &&
       userDetails["message"].trim().length > 0 && 
       agreement
-    ) {
-      console.log("true");
+    ) {      
       setValid(true);
     } else {      
       setValid(false);
@@ -65,8 +64,7 @@ const Contact = () => {
     }
   };
 
-  const handleSubmit = (e) => {
-    console.log("yeah");
+  const handleSubmit = (e) => {    
     e.preventDefault();
     if (valid) {      
       setUserDetails({
@@ -205,7 +203,7 @@ const Contact = () => {
                     setChanging(!changing)
                 }}/>
                 <p>
-                  you agree to our friendly <span>privacy policy</span>
+                  you agree to our friendly <span className="underline cursor-pointer">privacy policy</span>
                 </p>
               </div>
               <button

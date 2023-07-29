@@ -38,9 +38,7 @@ const SignIn = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (valid) {
-      console.log("submitted");
-      console.log(loginDetails);
+    if (valid) {      
       setLoginDetails({
         email: "",
         password: "",
