@@ -9,6 +9,9 @@ module.exports = {
   },
   theme: {
     extend: {
+      spacing: {
+        xpadding: "6.94%"
+      },
       colors: {
         primary1: "#00AC76",   
         primary2: "#FFF",
@@ -16,6 +19,7 @@ module.exports = {
         primary4: "#52525B",
         primary5: "#222",
         primary6: "#FDEFD2",
+        primary7: "#000",
         secondary1: {
           100: "#1B4ED2 50%",
           200: "rgba(181, 65, 162, 0.93) 100%",

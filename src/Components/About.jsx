@@ -1,10 +1,10 @@
-import NavBar from '@/AtomicComponent/NavBar'
+import NavBar from '@/AtomicComponents/NavBar'
 import React from 'react'
 
 const About = () => {
   return (
     <>
-        <NavBar />
+        <NavBar active={1}/>
     </>
   )
 }
