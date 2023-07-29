@@ -18,10 +18,12 @@ const Contact = () => {
       userDetails["firstName"].trim().length > 0 &&
       !emailError &&
       userDetails["lastName"].trim().length > 0 &&
-      userDetails["mesage"].trim().length > 0
+      userDetails["message"].trim().length > 0
     ) {
+      console.log("true");
       setValid(true);
     } else {
+      console.log("false");
       setValid(false);
     }
     if (
@@ -53,7 +55,7 @@ const Contact = () => {
     var value = e.target.value;
     if (name === "firstName" || name === "lastName") {
       acceptLettersOnly(name, value, 50);
-    } else if (name === "message") {
+    } else if (name === "message") {      
       acceptLettersOnly(name, value, 300);
     } else {
       setUserDetails({ ...userDetails, [name]: value });
@@ -62,6 +64,7 @@ const Contact = () => {
   };
 
   const handleSubmit = (e) => {
+    console.log("yeah");
     e.preventDefault();
     if (valid) {
       console.log("submitted");
@@ -127,10 +130,7 @@ const Contact = () => {
             <p className="text-primary4 font-[400] text-[0.9rem]">
               We’d love to hear from you. Please fill out this form.
             </p>
-            <form
-              className="cflexss w-full gap-[1em] font-[600] text-[0.8rem]"
-              onSubmit={handleSubmit}
-            >
+            <form className="cflexss w-full gap-[1em] font-[600] text-[0.8rem]">
               <div className="flexbm flex-wrap  gap-[0.5em] w-full">
                 <div className="cflexss gap-[0.5em]">
                   <p>First name</p>
@@ -196,13 +196,16 @@ const Contact = () => {
                   <p className="err">*can't exceed 150 characters</p>
                 )}
               </div>
-              <div className="flexsm w-full gap-[1em] text-[0.7rem] text-primary4 font-[400]">                
-                  <input type="checkbox" />
-                  <p>you agree to our friendly <span>privacy policy</span></p>                
+              <div className="flexsm w-full gap-[1em] text-[0.7rem] text-primary4 font-[400]">
+                <input type="checkbox" />
+                <p>
+                  you agree to our friendly <span>privacy policy</span>
+                </p>
               </div>
               <button
                 type="submit"
                 className="w-full py-3 px-5 bg-primary1 font-[700] cursor-pointer rounded-xl text-primary2"
+                onClick={handleSubmit}
               >
                 Send message
               </button>

@@ -192,7 +192,7 @@ const SignUp = () => {
               of discovery and learning! Sign up today to unlock a world of
               educational adventures for your child.
             </p>
-            <form className="cflexss gap-[1em] w-full" onSubmit={handleSubmit}>
+            <form className="cflexss gap-[1em] w-full">
               <div className="sect">
                 <p>Full name</p>
                 <div className="inputCont">
@@ -223,7 +223,9 @@ const SignUp = () => {
                     onChange={handleChange}
                   />
                 </div>
-                {emailError && <p className="err">* Fill in a valid email address</p>}
+                {emailError && (
+                  <p className="err">* Fill in a valid email address</p>
+                )}
               </div>
 
               <div className="sect">
@@ -316,7 +318,8 @@ const SignUp = () => {
 
               <button
                 type="submit"
-                className="flexmm gap-[0.5em] rounded-[2em] bg-primary1 px-[2.5em] py-[1em] text-white text-[0.8em] font-[600]"                
+                className="flexmm gap-[0.5em] rounded-[2em] bg-primary1 px-[2.5em] py-[1em] text-white text-[0.8em] font-[600]"
+                onClick={handleSubmit}
               >
                 <p>Create account</p>
                 <ArrowRightOutline size="12px" />
