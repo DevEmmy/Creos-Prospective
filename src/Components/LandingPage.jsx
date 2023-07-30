@@ -225,6 +225,12 @@ const LandingPage = () => {
               )
             })
           }
+          <div className="cflexss gap-[0.5em] text-[1rem] cursor-pointer">
+            <div className="bg-primary7 w-[1.5em] h-[1.5em] rounded-full flexmm">
+              <ArrowRightOutline size="1em" color="white"/>
+            </div>
+            <p>See more</p>
+          </div>
         </div>
       </div>
     </>
