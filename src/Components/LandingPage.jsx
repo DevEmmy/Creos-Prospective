@@ -62,7 +62,7 @@ const LandingPage = () => {
 
         <div className="flexes w-1/2">
           <div className="flexmm w-[80%]">
-            <Image src="boyImage.svg" width={100} height={100} alt="boyImage"/>
+            <Image src="/boyImage.svg" width={100} height={100} alt="boyImage"/>
           </div>
         </div>
       </div>
