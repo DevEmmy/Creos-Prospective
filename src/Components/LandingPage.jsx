@@ -98,7 +98,7 @@ const LandingPage = () => {
       </div>
 
       <div className="flexbm px-xpadding bg-primary2 py-[5em] text-[0.9rem] flex-wrap">
-        <div className="cflexms gap-[1em] w-1/2 pt-[4em]">
+        <div className="cflexms gap-[1em] w-1/2 pt-[2em]">
           <h1 className="font-[800] text-[1.5rem]">Why Choose CuriousKidz?</h1>
           <div className="flexss gap-[0.5em]">
             <div className="flexmm w-[5em]">
@@ -156,7 +156,7 @@ const LandingPage = () => {
         </div>
 
         <div className="flexes w-1/2">
-          <div className="flexmm w-[85%]">
+          <div className="flexmm w-[82%]">
             <Image
               src="/girlImage.svg"
               width={100}
