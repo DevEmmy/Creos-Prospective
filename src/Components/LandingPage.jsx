@@ -9,6 +9,7 @@ import Section3 from "./Section3"
 import Image from "next/image";
 import { ArrowRightOutline } from "heroicons-react";
 import Link from "next/link";
+import Footer from "@/AtomicComponents/Footer";
 
 const LandingPage = () => {
   const Courses = [
@@ -239,6 +240,7 @@ const LandingPage = () => {
       <Section1/>
       <Section2/>
       <Section3/>
+      <Footer />
     </>
   );
 };
