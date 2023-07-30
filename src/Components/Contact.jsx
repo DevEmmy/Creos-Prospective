@@ -85,7 +85,7 @@ const Contact = () => {
     <>
       <NavBar active={2} />
       <div className="flexss px-xpadding py-[4em] bg-primary6 h-full flex-wrap">
-        <div className="flex flex-col justify-between items-start h-[100%] w-[35em] flex-shrink py-[4em] text-primary3 text-[0.8rem]">
+        <div className="flex flex-col justify-between items-start h-[100%] w-[40em] flex-shrink py-[4em] text-primary3 text-[0.8rem]">
           <div className="w-full cflexss gap-[1em]">
             <h1 className="font-[700] text-[1.7rem]">Contact Us</h1>
             <p className="w-[90%]">
