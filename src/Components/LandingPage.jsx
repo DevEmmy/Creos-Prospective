@@ -9,6 +9,7 @@ import Section3 from "./Section3"
 import Image from "next/image";
 import { ArrowRightOutline } from "heroicons-react";
 import Link from "next/link";
+import Testimonials from "./Testimonials";
 
 const LandingPage = () => {
   const Courses = [
@@ -37,7 +38,7 @@ const LandingPage = () => {
     <>
       <NavBar active={0} />
       <div className="flexbm px-xpadding bg-primary6 py-[4em] text-[0.9rem] flex-wrap">
-        <div className="cflexms gap-[1.5em] w-1/2 py-[2em]">
+        <div className="cflexms gap-[1.5em] w-[35em] flex-grow py-[2em]">
           <h1 className="font-[800] text-[2.2rem]">
             Unlock Your Child's Potential through{" "}
             <span className="text-primary1">Innovative Education</span>
@@ -85,7 +86,7 @@ const LandingPage = () => {
           </div>
         </div>
 
-        <div className="flexes w-1/2">
+        <div className="flexes w-1/2 flex-shrink">
           <div className="flexmm w-[80%]">
             <Image
               src="/boyImage.svg"
@@ -97,8 +98,8 @@ const LandingPage = () => {
         </div>
       </div>
 
-      <div className="flexbm px-xpadding bg-primary2 py-[5em] text-[0.9rem] flex-wrap">
-        <div className="cflexms gap-[1em] w-1/2 pt-[2em]">
+      <div className="flexbm px-xpadding bg-primary2 py-[5em] text-[0.9rem] gap-[2em] flex-wrap">
+        <div className="cflexms gap-[1em] w-[35em] pt-[2em] flex-grow">
           <h1 className="font-[800] text-[1.5rem]">Why Choose CuriousKidz?</h1>
           <div className="flexss gap-[0.5em]">
             <div className="flexmm w-[5em]">
@@ -155,7 +156,7 @@ const LandingPage = () => {
           </div>
         </div>
 
-        <div className="flexes w-1/2">
+        <div className="flexes w-[35em] flex-shrink">
           <div className="flexmm w-[82%]">
             <Image
               src="/girlImage.svg"
@@ -171,8 +172,8 @@ const LandingPage = () => {
         <h1 className="align-center w-full flexmm font-[800] text-[1.5rem]">
           What We Offer:
         </h1>
-        <div className="flexbm flex-wrap">
-          <div className="border-r-2 cflexss gap-[1em] w-1/3 px-[2em] ">
+        <div className="flexbm w-full flex-wrap">
+          <div className="border-r-2 cflexss gap-[1em] w-[27em] px-[2em] flex-grow">
             <div className="flexmm text-white bg-primary1 w-[2.5em] h-[2.5em] rounded-[0.5em] font-[800]">
               1
             </div>
@@ -183,7 +184,7 @@ const LandingPage = () => {
               goes beyond the classroom.
             </p>
           </div>
-          <div className="border-r-2 cflexss gap-[1em] w-1/3 px-[2em] ">
+          <div className="border-r-2 cflexss gap-[1em] w-[27em] px-[2em] flex-grow">
             <div className="flexmm text-white bg-primary1 w-[2.5em] h-[2.5em] rounded-[0.5em] font-[800]">
               2
             </div>
@@ -194,7 +195,7 @@ const LandingPage = () => {
               learn.
             </p>
           </div>
-          <div className="cflexss gap-[1em] w-1/3 px-[2em] ">
+          <div className="cflexss gap-[1em] w-[27em] px-[2em] flex-grow">
             <div className="flexmm text-white bg-primary1 w-[2.5em] h-[2.5em] rounded-[0.5em] font-[800]">
               3
             </div>
@@ -239,6 +240,7 @@ const LandingPage = () => {
       <Section1/>
       <Section2/>
       <Section3/>
+      <Testimonials/>
     </>
   );
 };
