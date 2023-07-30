@@ -12,6 +12,7 @@ const Section2 = () => {
       content:
         "Young aspiring bakers will learn the art of baking delectable treats like cookies, cupcakes, and pastries.",
       author: "Bessie Cooper • 14 Mar 2023",
+      images: ["kid1", "kid2", "kid3", "kid4"],
       enrolled: "50+ Kids enrolled",
     },
     {
@@ -21,6 +22,7 @@ const Section2 = () => {
       content:
         "Get your hands dirty and dive into the world of gardening with our Green Thumb Gardener course!",
       author: "Savannah Nguyen • 19 June 2023",
+      images: ["kid1", "kid2", "kid3", "kid4"],
       enrolled: "150+ Kids enrolled",
     },
     {
@@ -30,6 +32,7 @@ const Section2 = () => {
       content:
         "Dive into the world of communication without words in our Sign Language Explorers course!",
       author: "Dianne Russell • 19 Oct 2022",
+      images: ["kid1", "kid2", "kid3", "kid4"],
       enrolled: "230+ Kids enrolled",
     },
     {
@@ -39,6 +42,7 @@ const Section2 = () => {
       content:
         "This course is a haven for young artists to explore various art forms, including drawing, painting, and sculpting.",
       author: "Devon Lane • 15 Dec 2022",
+      images: ["kid1", "kid2", "kid3", "kid4"],
       enrolled: "180+ Kids enrolled",
     },
   ];
@@ -74,6 +78,7 @@ const Section2 = () => {
                   heading={video.heading}
                   content={video.content}
                   author={video.author}
+                  images={video.images}
                   enrolled={video.enrolled}
                 />
               </>

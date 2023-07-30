@@ -12,6 +12,7 @@ const Section1 = () => {
       content:
         "Step into the captivating world of history and embark on a thrilling adventure through time!",
       author: "Wade Warren • 14 Jan 2022",
+      images: ["kid1", "kid2", "kid3", "kid4"],
       enrolled: "43+ Kids enrolled",
     },
     {
@@ -21,6 +22,7 @@ const Section1 = () => {
       content:
         "Discover the joy of artistic expression in our Drawing and Painting Mastery course!",
       author: "Leslie Alexander • 16 Feb 2022",
+      images: ["kid1", "kid2", "kid3", "kid4"],
       enrolled: "59+ Kids enrolled",
     },
     {
@@ -30,6 +32,7 @@ const Section1 = () => {
       content:
         "Children will explore a wide range of materials and techniques, turning their imagination into tangible creations.",
       author: "Robert Fox • 23 April 2022",
+      images: ["kid1", "kid2", "kid3", "kid4"],
       enrolled: "430+ Kids enrolled",
     },
     {
@@ -39,6 +42,7 @@ const Section1 = () => {
       content:
         "Step into the captivating world of history and embark on a thrilling adventure through time!",
       author: "Wade Warren • 14 Jan 2022",
+      images: ["kid1", "kid2", "kid3", "kid4"],
       enrolled: "140+ Kids enrolled",
     },
   ];
@@ -73,6 +77,7 @@ const Section1 = () => {
                   heading={video.heading}
                   content={video.content}
                   author={video.author}
+                  images={video.images}
                   enrolled={video.enrolled}
                 />
               </>
