@@ -49,7 +49,7 @@ const SignIn = () => {
   };
   return (
     <>
-      <div className="w-full h-full flexss overflow-auto">
+      <div className="w-full h-full flexss overflow-auto flex-wrap">
         <div className="w-[45%] h-full bg-primary1 pt-[4em] pb-[6em] px-[7%] text-primary2">
           <div className="cflexss gap-[1.5em]">
             <Link href="/" className="w-[15em]">

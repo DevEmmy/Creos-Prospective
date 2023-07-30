@@ -63,7 +63,7 @@ const Testimonials = () => {
             );
           })}
         </div>
-        <div className="flexss gap-[1em] font-[700] text-[0.8rem]">
+        <div className="flexss gap-[1em] font-[700] text-[0.8rem] flex-wrap">
           <Link href="/signup">
             <Button className="bg-primary1 text-white flexmm gap-[0.5em] px-[2.5em] py-[1em] rounded-full">
               <p>Enroll now</p> <ArrowRightOutline size="1em" />

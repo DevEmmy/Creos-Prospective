@@ -50,7 +50,7 @@ const LandingPage = () => {
             that sparks curiosity, fosters creativity, and inspires young minds
             to explore the wonders of the world.
           </p>
-          <div className="flexss gap-[1em] font-[700] text-[0.8rem]">
+          <div className="flexss gap-[1em] font-[700] text-[0.8rem] flex-wrap">
             <Link href="/signup">
               <Button className="bg-primary1 text-white flexmm gap-[0.5em] px-[2.5em] py-[1em] rounded-full">
                 <p>Enroll now</p> <ArrowRightOutline size="1em" />
@@ -62,7 +62,7 @@ const LandingPage = () => {
               </Button>
             </Link>
           </div>
-          <div className="flexsm gap-[1em]">
+          <div className="flexsm gap-[1em] flex-wrap">
             <div className="flexsm gap-[0.5em]">
               <CheckCircle
                 className="flexmm w-[1em] h-[1em] rounded-full bg-primary1 "
@@ -87,7 +87,7 @@ const LandingPage = () => {
           </div>
         </div>
 
-        <div className="flexes w-1/2 flex-shrink">
+        <div className="flexes w-[37em] flex-shrink">
           <div className="flexmm w-[80%]">
             <Image
               src="/boyImage.svg"
