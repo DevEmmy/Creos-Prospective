@@ -173,7 +173,7 @@ const LandingPage = () => {
         <h1 className="align-center w-full flexmm font-[800] text-[1.5rem]">
           What We Offer:
         </h1>
-        <div className="flexbm w-full flex-wrap">
+        <div className="flexbm w-full flex-wrap gap-[2em]">
           <div className="border-r-2 cflexss gap-[1em] w-[27em] px-[2em] flex-grow">
             <div className="flexmm text-white bg-primary1 w-[2.5em] h-[2.5em] rounded-[0.5em] font-[800]">
               1
@@ -210,11 +210,11 @@ const LandingPage = () => {
       </div>
 
       <div className="bg-white cflexss gap-[5em] py-[5em] px-xpadding text-[0.8rem]">
-        <div className="cflexsm gap-[1em] font-[400] text-[0.9rem]">
-          <h1 className="align-center w-full flexmm font-[800] text-[1.5rem] text-[#012B1D]">
+        <div className="w-full cflexmm gap-[1em] font-[400] text-[0.9rem]">
+          <h1 className="w-full flexmm font-[800] text-[1.5rem] text-[#012B1D]">
             Explore Our Programs:
           </h1>
-          <p className="w-[70%] text-center">
+          <p className="max-w-[40em] flex-shrink text-center">
             Browse through our exciting range of courses designed to cater to
             various age groups and interests. From 3D printing to astronomy,
             there's something for every curious kid!
