@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import NavBar from "@/AtomicComponents/NavBar";
+import Footer from "@/AtomicComponents/Footer";
 
 const Contact = () => {
   const EMAIL_REGEX = /^(\w+)([\.\-]?\w+)*\@(\w+)([\.\-]?\w+)*(\.[a-z|A-Z]+)$/;
@@ -217,6 +218,7 @@ const Contact = () => {
           </div>
         </div>
       </div>
+      <Footer/>
     </>
   );
 };
