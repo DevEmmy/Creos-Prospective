@@ -3,6 +3,9 @@ import NavBar from "@/AtomicComponents/NavBar";
 import Button from "@/AtomicComponents/Button";
 import CheckCircle from "@/AtomicComponents/CheckCircle";
 import CourseCard from "@/AtomicComponents/CourseCard";
+import Section1 from "./Section1";
+import Section2 from "./Section2";
+import Section3 from "./Section3"
 import Image from "next/image";
 import { ArrowRightOutline } from "heroicons-react";
 import Link from "next/link";
@@ -33,7 +36,7 @@ const LandingPage = () => {
   return (
     <>
       <NavBar active={0} />
-      <div className="flexbm px-xpadding bg-primary6 py-[4em] text-[0.9rem]">
+      <div className="flexbm px-xpadding bg-primary6 py-[4em] text-[0.9rem] flex-wrap">
         <div className="cflexms gap-[1.5em] w-1/2 py-[2em]">
           <h1 className="font-[800] text-[2.2rem]">
             Unlock Your Child's Potential through{" "}
@@ -94,7 +97,7 @@ const LandingPage = () => {
         </div>
       </div>
 
-      <div className="flexbm px-xpadding bg-primary2 py-[5em] text-[0.9rem]">
+      <div className="flexbm px-xpadding bg-primary2 py-[5em] text-[0.9rem] flex-wrap">
         <div className="cflexms gap-[1em] w-1/2 pt-[4em]">
           <h1 className="font-[800] text-[1.5rem]">Why Choose CuriousKidz?</h1>
           <div className="flexss gap-[0.5em]">
@@ -153,7 +156,7 @@ const LandingPage = () => {
         </div>
 
         <div className="flexes w-1/2">
-          <div className="flexmm w-[80%]">
+          <div className="flexmm w-[85%]">
             <Image
               src="/girlImage.svg"
               width={100}
@@ -168,7 +171,7 @@ const LandingPage = () => {
         <h1 className="align-center w-full flexmm font-[800] text-[1.5rem]">
           What We Offer:
         </h1>
-        <div className="flexbm">
+        <div className="flexbm flex-wrap">
           <div className="border-r-2 cflexss gap-[1em] w-1/3 px-[2em] ">
             <div className="flexmm text-white bg-primary1 w-[2.5em] h-[2.5em] rounded-[0.5em] font-[800]">
               1
@@ -215,12 +218,12 @@ const LandingPage = () => {
             there's something for every curious kid!
           </p>
         </div>
-        <div className="flexmm w-full gap-[2em]">
+        <div className="flexmm w-full gap-[2em] flex-wrap">
           {
             Courses.map((course, i)=>{
               return(
                 <>
-                  <CourseCard background={course.background} image={course.image} text={course.text}/>
+                  <CourseCard background={course.background} image={course.image} text={course.text} key={i}/>
                 </>
               )
             })
@@ -233,6 +236,9 @@ const LandingPage = () => {
           </div>
         </div>
       </div>
+      <Section1/>
+      <Section2/>
+      <Section3/>
     </>
   );
 };
