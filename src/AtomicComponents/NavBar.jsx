@@ -15,14 +15,14 @@ const NavBar = ({active=0}) => {
     },
     {
       title: "Contact Us",
-      link: "/contact-us"
+      link: "/contact"
     }
   ]
   return (
     <>
         <nav className='bg-primary6 w-full flex justify-between items-center py-[20px] px-xpadding'>
             <Link href="/" className="w-[15em]">
-              <Image src="/logo.png" width={100} height={100} alt="CSkidz" />
+              <Image src="/homeLogo.svg" width={100} height={100} alt="CSkidz" />
             </Link>
 
             <div className='flex gap-[60px]'>

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import NavBar from "@/AtomicComponents/NavBar";
 
 const Contact = () => {
   const EMAIL_REGEX = /^(\w+)([\.\-]?\w+)*\@(\w+)([\.\-]?\w+)*(\.[a-z|A-Z]+)$/;
@@ -6,11 +7,12 @@ const Contact = () => {
   const [emailError, setEmailError] = useState(false);
   const [valid, setValid] = useState(false);
   const [exceedChar, setExceedChar] = useState("");
+  const [agreement, setAgreement] = useState(false);
   const [userDetails, setUserDetails] = useState({
     firstName: "",
     lastName: "",
     email: "",
-    message: "",
+    message: "",    
   });
 
   useEffect(() => {
@@ -18,10 +20,11 @@ const Contact = () => {
       userDetails["firstName"].trim().length > 0 &&
       !emailError &&
       userDetails["lastName"].trim().length > 0 &&
-      userDetails["mesage"].trim().length > 0
-    ) {
+      userDetails["message"].trim().length > 0 && 
+      agreement
+    ) {      
       setValid(true);
-    } else {
+    } else {      
       setValid(false);
     }
     if (
@@ -61,17 +64,17 @@ const Contact = () => {
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e) => {    
     e.preventDefault();
-    if (valid) {
-      console.log("submitted");
-      console.log(userDetails);
+    if (valid) {      
       setUserDetails({
         firstName: "",
         lastName: "",
         email: "",
         message: "",
       });
+      setAgreement(false)
+      setValid(false)
 
       // ENDPOINT FOR SUBMITTING USER MESSAGE
     }
@@ -79,7 +82,8 @@ const Contact = () => {
 
   return (
     <>
-      <div className="flexss px-[6%] py-[4em] bg-primary6 h-full">
+      <NavBar active={2} />
+      <div className="flexss px-xpadding py-[4em] bg-primary6 h-full">
         <div className="flex flex-col justify-between items-start h-[100%] w-1/2 py-[4em] text-primary3 text-[0.8rem]">
           <div className="w-full cflexss gap-[1em]">
             <h1 className="font-[700] text-[1.7rem]">Contact Us</h1>
@@ -119,7 +123,7 @@ const Contact = () => {
           </div>
         </div>
 
-        <div className="flexms h-[100%] w-1/2 px-[4%]">
+        <div className="flexms h-[100%] w-1/2 pl-[6%]">
           <div className="cflexss gap-[1em] w-[100%] p-[1.5em] px-[2em] bg-primary2">
             <h1 className="text-primary1 font-[700] text-[1.5rem] w-[60%]">
               Get in touch with us & let's talk
@@ -127,12 +131,9 @@ const Contact = () => {
             <p className="text-primary4 font-[400] text-[0.9rem]">
               We’d love to hear from you. Please fill out this form.
             </p>
-            <form
-              className="cflexss w-full gap-[1em] font-[600] text-[0.8rem]"
-              onSubmit={handleSubmit}
-            >
+            <form className="cflexss w-full gap-[1em] font-[600] text-[0.8rem]">
               <div className="flexbm flex-wrap  gap-[0.5em] w-full">
-                <div className="cflexss gap-[0.5em]">
+                <div className="cflexss gap-[0.5em] flex-grow">
                   <p>First name</p>
                   <div className="inputCont2">
                     <input
@@ -148,7 +149,7 @@ const Contact = () => {
                     <p className="err">*can't exceed 50 characters</p>
                   )}
                 </div>
-                <div className="cflexss gap-[0.5em]">
+                <div className="cflexss gap-[0.5em] flex-grow">
                   <p>Last name</p>
                   <div className="inputCont2">
                     <input
@@ -196,13 +197,19 @@ const Contact = () => {
                   <p className="err">*can't exceed 150 characters</p>
                 )}
               </div>
-              <div className="flexsm w-full gap-[1em] text-[0.7rem] text-primary4 font-[400]">                
-                  <input type="checkbox" />
-                  <p>you agree to our friendly <span>privacy policy</span></p>                
+              <div className="flexsm w-full gap-[1em] text-[0.7rem] text-primary4 font-[400]">
+                <input type="checkbox" checked={agreement} onClick={(e)=>{
+                    setAgreement(e.target.checked)
+                    setChanging(!changing)
+                }}/>
+                <p>
+                  you agree to our friendly <span className="underline cursor-pointer">privacy policy</span>
+                </p>
               </div>
               <button
                 type="submit"
                 className="w-full py-3 px-5 bg-primary1 font-[700] cursor-pointer rounded-xl text-primary2"
+                onClick={handleSubmit}
               >
                 Send message
               </button>

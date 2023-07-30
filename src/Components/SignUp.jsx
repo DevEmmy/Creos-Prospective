@@ -118,9 +118,7 @@ const SignUp = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (valid) {
-      console.log("submitted");
-      console.log(userDetails);
+    if (valid) {     
       setUserDetails({
         fullName: "",
         email: "",
@@ -223,7 +221,9 @@ const SignUp = () => {
                     onChange={handleChange}
                   />
                 </div>
-                {emailError && <p className="err">* Fill in a valid email</p>}
+                {emailError && (
+                  <p className="err">* Fill in a valid email address</p>
+                )}
               </div>
 
               <div className="sect">
@@ -248,10 +248,10 @@ const SignUp = () => {
                 <PhoneInput
                   country={"ng"} // Default country code (optional)
                   inputStyle={{
-                    minWidth: "43em",
+                    width:"100%",                    
                     color: "#AAA",
                     fontSize: "0.7em",
-                    fontWeight: "400",
+                    fontWeight: "400"                        
                   }}
                   inputProps={{
                     name: "phoneNumber", // Set the name property of the input element

@@ -38,9 +38,7 @@ const SignIn = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (valid) {
-      console.log("submitted");
-      console.log(loginDetails);
+    if (valid) {      
       setLoginDetails({
         email: "",
         password: "",
@@ -105,7 +103,7 @@ const SignIn = () => {
               Sign in to continue your learning journey and explore a world of
               endless possibilities.
             </p>
-            <form className="cflexss gap-[1em] w-full" onSubmit={handleSubmit}>
+            <form className="cflexss gap-[1em] w-full">
               <div className="sect">
                 <p>Email address</p>
                 <div className="inputCont">
@@ -168,6 +166,7 @@ const SignIn = () => {
               <button
                 type="submit"
                 className="flexmm gap-[0.5em] rounded-[2em] bg-primary1 px-[2.5em] py-[1em] text-white text-[0.8em] font-[600]"
+                onClick={handleSubmit}
               >
                 <p>Sign In</p>
                 <ArrowRightOutline size="12px" />
