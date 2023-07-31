@@ -51,14 +51,14 @@ const Footer = () => {
       ]
   return (
     <>
-    <div className='px-xpadding py-[80px] bg-primary1 text-white flex flex-col gap-5'>
-        <div className='grid grid-cols-3 gap-[120px] justify-between'>
+    <div className='px-xpadding py-[80px] sm:py-[50px] bg-primary1 text-white flex flex-col gap-5 sm:gap-3'>
+        <div className='grid grid-cols-3 sm:grid-cols-none gap-[120px] sm:gap-6 justify-between'>
             <div className='flex flex-col gap-4'>
                 <Link href={"/"}>
                     <Image src={"logo.svg"} alt="logo" width={'0'} height={"0"}/>
                 </Link>
                   
-                <div className='text-white flex flex-col gap-6 text-[0.8em]'>
+                <div className='text-white flex flex-col gap-6 sm:gap-3 text-[0.8em]'>
                     <p>
                     CuriousKidz is a digital resource website focused on promoting personalized learning and education technology.
                   </p>
@@ -75,7 +75,7 @@ const Footer = () => {
                 </div>
             </div>
 
-            <div className='flex gap-[30px]'>
+            <div className='flex gap-[30px] sm:gap-2 sm:flex-col'>
               {
                 nav.map((item, i)=>{
                   return(

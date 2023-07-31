@@ -28,12 +28,12 @@ const About = () => {
                 At CuriousKidz, we believe that every young mind holds boundless potential, waiting to be unleashed through curiosity, creativity, and problem-solving skills.
               </p>
 
-              <div className='flex gap-3 items-center text-[0.8em] font-[700]'>
-                <Button className={"flex items-center gap-1 rounded-full px-[2.5em] py-[1em] text-white bg-primary1 "}>
+              <div className='flex gap-3 items-center text-[0.8em] font-[700] sm:flex-col sm:items-start'>
+                <Button className={"flex items-center gap-1 rounded-full px-[2.5em] py-[1em] text-white bg-primary1 sm:w-full sm:justify-center"}>
                   Enroll now <FaArrowRight />
                 </Button>
 
-                <Button className={"flex items-center gap-1 rounded-full px-[2.5em] py-[0.9em] text-primary1 bg-transparent border-primary1 border-2"}>
+                <Button className={"flex items-center gap-1 rounded-full px-[2.5em] py-[0.9em] text-primary1 bg-transparent border-primary1 border-2 sm:w-full sm:justify-center"}>
                   Login as a guest
                 </Button>
               </div>
@@ -71,7 +71,7 @@ const About = () => {
                   These resources are often readily available in developed societies, making it easier for children in those regions to explore fields like aerospace, astronomy, robotics, computer programming, and systems theory.
               </p>
 
-              <Button className={"flex items-center w-fit gap-1 rounded-full px-[2.5em] py-[1em] text-white bg-primary1 "}>
+              <Button className={"flex items-center w-fit gap-1 rounded-full px-[2.5em] py-[1em] text-white bg-primary1 sm:w-full sm:justify-center"}>
                   Enroll now <FaArrowRight />
                 </Button>
               </div>
@@ -126,12 +126,12 @@ const About = () => {
                 At CuriousKidz, we believe that every young mind holds boundless potential, waiting to be unleashed through curiosity, creativity, and problem-solving skills.
               </p>
 
-              <div className='flex gap-3 items-center text-[0.8em] font-[700]'>
-                <Button className={"flex items-center gap-1 rounded-full px-[2.5em] py-[1em] text-white bg-primary1 "}>
+              <div className='flex gap-3 items-center text-[0.8em] font-[700] sm:flex-col'>
+                <Button className={"flex items-center gap-1 rounded-full px-[2.5em] py-[1em] text-white bg-primary1 sm:w-full sm:justify-center"}>
                   Enroll now <FaArrowRight />
                 </Button>
 
-                <Button className={"flex items-center gap-1 rounded-full px-[2.5em] py-[0.9em] text-primary1 bg-transparent border-primary1 border-2"}>
+                <Button className={"flex items-center gap-1 rounded-full px-[2.5em] py-[0.9em] text-primary1 bg-transparent border-primary1 border-2 sm:w-full sm:justify-center"}>
                   Login as a guest
                 </Button>
               </div>
