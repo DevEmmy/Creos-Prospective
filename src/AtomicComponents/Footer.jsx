@@ -51,8 +51,8 @@ const Footer = () => {
       ]
   return (
     <>
-        <div className='grid grid-cols-3 gap-[120px] justify-between px-xpadding py-[120px] bg-primary1 text-white'>
-
+    <div className='px-xpadding py-[80px] bg-primary1 text-white flex flex-col gap-5'>
+        <div className='grid grid-cols-3 gap-[120px] justify-between'>
             <div className='flex flex-col gap-4'>
                 <Link href={"/"}>
                     <Image src={"logo.svg"} alt="logo" width={'0'} height={"0"}/>
@@ -100,7 +100,7 @@ const Footer = () => {
               }
               </div>
 
-              <div className='flex flex-col gap-3'>
+              <div className='flex flex-col gap-3 text-[0.8em]'>
               {
                 moreInfo.map((info, i)=>{
                   return(
@@ -119,6 +119,13 @@ const Footer = () => {
             </div>
             
         </div>
+
+        <div className='w-full bg-white h-[1px] mt-5' />
+        <p className="text-[0.8em] text-center">
+          &copy; Copyright 2023, All Rights Reserved by Curious Kidz
+        </p>
+    </div>
+        
     </>
   )
 }
