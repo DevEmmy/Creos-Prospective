@@ -49,8 +49,8 @@ const Section2 = () => {
   return (
     <>
       <div className="cflexss gap-[1em] py-[2em] px-xpadding font-[400]">
-        <div className="w-full flexbm text-[0.9rem]">
-          <div className="w-[40em] cflexss gap-[0.7em] flex-wrap">
+        <div className="w-full flexbm text-[0.9rem] gap-[1em] flex-wrap">
+          <div className="w-[40em] cflexss gap-[0.7em]">
             <h1 className="font-[800] text-[#012B1D] text-[1.5rem]">
               Recommended Videos for Kids Ages 10-14:
             </h1>
