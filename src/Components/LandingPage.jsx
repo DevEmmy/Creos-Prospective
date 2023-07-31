@@ -99,7 +99,7 @@ const LandingPage = () => {
         </div>
       </div>
 
-      <div className="flexbm px-xpadding bg-primary2 py-[5em] text-[0.9rem] gap-[2em] flex-wrap">
+      <div className="flexbm px-xpadding bg-[#FAFAFA] py-[5em] text-[0.9rem] gap-[2em] flex-wrap">
         <div className="cflexms gap-[1em] w-[35em] pt-[2em] flex-grow">
           <h1 className="font-[800] text-[1.5rem]">Why Choose CuriousKidz?</h1>
           <div className="flexss gap-[0.5em]">
@@ -209,7 +209,7 @@ const LandingPage = () => {
         </div>
       </div>
 
-      <div className="bg-white cflexss gap-[5em] py-[5em] px-xpadding text-[0.8rem]">
+      <div className="bg-[#FAFAFA] cflexss gap-[5em] py-[5em] px-xpadding text-[0.8rem]">
         <div className="w-full cflexmm gap-[1em] font-[400] text-[0.9rem]">
           <h1 className="w-full flexmm font-[800] text-[1.5rem] text-[#012B1D]">
             Explore Our Programs:

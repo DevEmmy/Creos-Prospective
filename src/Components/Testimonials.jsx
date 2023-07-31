@@ -44,7 +44,7 @@ const ParentRiviews = [
 const Testimonials = () => {
   return (
     <>
-      <div className="w-full cflexsm gap-[3em] px-xpadding py-[4em]">
+      <div className="bg-[#FAFAFA] w-full cflexsm gap-[3em] px-xpadding py-[4em]">
         <div className="w-full cflexsm gap-[0.5em] font-[400] text-[0.9rem]">
           <p className="font-[700] text-[1.5rem] text-[#012B1D]">
             Parent Testimonials
