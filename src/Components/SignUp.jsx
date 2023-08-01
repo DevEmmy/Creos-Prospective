@@ -26,9 +26,9 @@ const SignUp = () => {
     country: "",
   });
 
-  useEffect(() => {
-    fName.current.focus();
-  }, []);
+  // useEffect(() => {
+  //   fName.current.focus();
+  // }, []);
 
   useEffect(() => {
     if (

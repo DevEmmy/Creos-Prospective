@@ -14,9 +14,9 @@ const SignIn = () => {
     password: "",
   });
 
-  useEffect(() => {
-    eMail.current.focus();
-  }, []);
+  // useEffect(() => {
+  //   eMail.current.focus();
+  // }, []);
 
   useEffect(() => {
     if (
