@@ -1,7 +1,8 @@
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Button from "@/AtomicComponents/Button";
-import { ArrowRightOutline } from "heroicons-react";
+import { ArrowRightOutline, ChevronLeft, ChevronRight } from "heroicons-react";
 const ParentRiviews = [
   {
     star: "5star",
@@ -42,6 +43,24 @@ const ParentRiviews = [
 ];
 
 const Testimonials = () => {
+  const [id, setId] = useState(0);
+  const [next, setNext] = useState(false);
+  const [prev, setPrev] = useState(false);
+
+  useEffect(() => {
+    if(id === 0){
+      setNext(true)
+      setPrev(false)
+    }
+    else if(id === ParentRiviews.length-1){
+      setNext(false)
+      setPrev(true)
+    }
+    else{
+      setNext(true)
+      setPrev(true)
+    }
+  }, [id]);
   return (
     <>
       <div className="bg-[#FAFAFA] w-full cflexsm gap-[3em] sm:gap-[2em] px-xpadding py-[4em] sm:px-[1em] sm:py-[2em]">
@@ -54,7 +73,7 @@ const Testimonials = () => {
             CuriousKidz. See the impact on their confidence and academic growth.
           </p>
         </div>
-        <div className="flexbs gap-[4em] w-full flex-wrap">
+        <div className="block flexbs gap-[4em] w-full flex-wrap sm:hidden">
           {ParentRiviews.map((review, i) => {
             return (
               <>
@@ -62,6 +81,34 @@ const Testimonials = () => {
               </>
             );
           })}
+        </div>
+        <div className="hidden sm:block w-full">
+          <div className="flexbs gap-[4em] w-full flex-wrap">
+            {ParentRiviews.map((review, i) => {
+              return <>{i == id && <Reviews {...review} key={i} />}</>;
+            })}
+          </div>
+        </div>
+        <div className="hidden sm:block">
+          <div className="flexmm w-full gap-[1em] pt-[2em]">
+            <ChevronLeft
+              onClick={() => {
+                if (id !== 0) {
+                  setId(id - 1);                  
+                } 
+              }}
+              color={prev ? "black" : "gray"}
+            />
+
+            <ChevronRight
+              onClick={() => {
+                if (id !== ParentRiviews.length-1) {
+                  setId(id + 1);                  
+                } 
+              }}
+              color={next ? "black" : "gray"}
+            />
+          </div>
         </div>
         <div className="flexss sm1:justify-center gap-[1em] font-[700] text-[0.8rem] flex-wrap sm1:w-full">
           <Link href="/signup" className="sm:flex flex-grow">
