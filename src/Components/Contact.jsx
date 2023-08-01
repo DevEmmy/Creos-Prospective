@@ -125,8 +125,8 @@ const Contact = () => {
         </div>
 
         <div className="flexms h-[100%] w-[35em] flex-shrink sm1:flex-grow pl-[6%] sm1:pl-0">
-          <div className="cflexss gap-[1em] w-[100%] p-[1.5em] px-[2em] bg-primary2">
-            <h1 className="text-primary1 font-[700] text-[1.5rem] w-[60%]">
+          <div className="cflexss gap-[1em] w-[100%] p-[1.5em] px-[2em] sm:px-[1em] bg-primary2">
+            <h1 className="text-primary1 font-[700] text-[1.5rem] w-[60%] sm:w-full">
               Get in touch with us & let's talk
             </h1>
             <p className="text-primary4 font-[400] text-[0.9rem]">
