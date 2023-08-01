@@ -98,6 +98,7 @@ const Testimonials = () => {
                 } 
               }}
               color={prev ? "black" : "gray"}
+              className="cursor-pointer"
             />
 
             <ChevronRight
@@ -107,6 +108,7 @@ const Testimonials = () => {
                 } 
               }}
               color={next ? "black" : "gray"}
+              className="cursor-pointer"
             />
           </div>
         </div>
