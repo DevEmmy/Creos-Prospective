@@ -44,12 +44,12 @@ const ParentRiviews = [
 const Testimonials = () => {
   return (
     <>
-      <div className="bg-[#FAFAFA] w-full cflexsm gap-[3em] px-xpadding py-[4em]">
-        <div className="w-full cflexsm gap-[0.5em] font-[400] text-[0.9rem]">
-          <p className="font-[700] text-[1.5rem] text-[#012B1D]">
+      <div className="bg-[#FAFAFA] w-full cflexsm gap-[3em] sm:gap-[2em] px-xpadding py-[4em] sm:px-[1em] sm:py-[2em]">
+        <div className="w-full cflexsm sm:items-start gap-[0.5em] font-[400] text-[0.9rem] sm:text-[1.1rem]">
+          <p className="font-[700] sm:font-[800] sm:text-[1.7rem] text-[1.5rem] text-[#012B1D]">
             Parent Testimonials
           </p>
-          <p>
+          <p className="text-[#333]">
             Hear from parents whose children have experienced the magic of
             CuriousKidz. See the impact on their confidence and academic growth.
           </p>
@@ -63,14 +63,14 @@ const Testimonials = () => {
             );
           })}
         </div>
-        <div className="flexss gap-[1em] font-[700] text-[0.8rem] flex-wrap">
-          <Link href="/signup">
-            <Button className="bg-primary1 text-white flexmm gap-[0.5em] px-[2.5em] py-[1em] rounded-full">
+        <div className="flexss sm1:justify-center gap-[1em] font-[700] text-[0.8rem] flex-wrap sm1:w-full">
+          <Link href="/signup" className="sm:flex flex-grow">
+            <Button className="border border-[0.2em] border-primary1 bg-primary1 text-white flexmm gap-[0.5em] px-[2.5em] py-[1em] rounded-full sm:w-full">
               <p>Enroll now</p> <ArrowRightOutline size="1em" />
             </Button>
           </Link>
-          <Link href="/">
-            <Button className="border border-[0.2em] border-primary1 text-primary1 flexmm gap-[0.5em] px-[2.5em] py-[1em] rounded-full">
+          <Link href="/" className="sm:flex flex-grow">
+            <Button className="border border-[0.2em] border-primary1 text-primary1 flexmm gap-[0.5em] px-[2.5em] py-[1em] rounded-full sm:w-full">
               <p>Login as a guest</p>
             </Button>
           </Link>
@@ -86,8 +86,8 @@ const Reviews = (props) => {
   const { star, content1, content2, image, name } = props;
   return (
     <>
-      <div className="cflexss gap-[1em] w-[30em] flex-grow font-[600] text-[#090914] text-[0.8rem]">
-        <div className="flexmm w-[7em]">
+      <div className="cflexss gap-[1em] w-[30em] flex-grow font-[600] text-[#090914] text-[0.8rem] sm:text-[1rem]">
+        <div className="flexmm w-[7em] sm:w-[10em]">
           <Image src={`${star}.svg`} width={100} height={100} alt={`${star}`} />
         </div>
         <p>"{content1}</p>

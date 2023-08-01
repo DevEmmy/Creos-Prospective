@@ -48,10 +48,10 @@ const Section3 = () => {
   ];
   return (
     <>
-      <div className="cflexss gap-[1em] py-[2em] px-xpadding font-[400]">
-        <div className="w-full flexbm text-[0.9rem] gap-[1em] flex-wrap">
-          <div className="w-[40em] cflexss gap-[0.7em]">
-            <h1 className="font-[800] text-[#012B1D] text-[1.5rem]">
+      <div className="cflexss gap-[1em] py-[2em] px-xpadding sm:px-[1rem] font-[400]">
+        <div className="w-full flexbm text-[0.9rem] sm:text-[1.1rem] gap-[1em] flex-wrap">
+          <div className="w-[40em] cflexss gap-[0.7em] text-[#333]">
+            <h1 className="font-[800] text-[#012B1D] text-[1.5rem] sm:text-[1.6rem]">
               Recommended Videos for Kids Ages 15-18:
             </h1>
             <p>
@@ -61,7 +61,7 @@ const Section3 = () => {
             </p>
           </div>
           <Link href="/">
-            <Button className="bg-primary1 text-white flexmm gap-[0.5em] px-[2.5em] py-[1em] rounded-full font-[700]">
+            <Button className="bg-primary1 text-white flexmm gap-[0.5em] px-[2.5em] py-[1em] rounded-full font-[400]">
               <p>See more</p> <ArrowRightOutline size="1em" />
             </Button>
           </Link>
