@@ -118,7 +118,7 @@ const SignUp = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (valid) {     
+    if (valid) {
       setUserDetails({
         fullName: "",
         email: "",
@@ -134,24 +134,24 @@ const SignUp = () => {
   return (
     <>
       <div className="h-full w-full flexss flex-wrap">
-        <div className="w-[45%] h-full bg-primary1 pt-[4em] pb-[6em] px-[5em] text-primary2">
+        <div className="w-[45%] h-full bg-primary1 pt-[3em] sm:py-[2em] pb-[8em] px-[5em] text-primary2 sm:px-[1.5em] md1:w-full">
           <div className="cflexss gap-[1.5em]">
-            <Link href="/" className="w-[15em]">
+            <Link href="/" className="w-[15em] sm:w-[12em]">
               <Image src="logo.svg" width={100} height={100} alt="CSkidz" />
             </Link>
             <div>
-              <h1 className="text-[2.3rem] font-[800]">
+              <h1 className="text-[2.3rem] sm:text-[1.8rem] font-[800]">
                 Welcome to CuriousKidz!
               </h1>
-              <p className="text-sm font-[400] pt-[0.5em] text-justify">
+              <p className="text-sm sm:text-[1rem] font-[400] pt-[0.5em]">
                 By creating an account, you gain access to a diverse range of
                 engaging courses, interactive lessons, and hands-on projects
                 designed to inspire young minds. Let's nurture curiosity and
                 ignite a passion for learning together!
               </p>
             </div>
-            <div className="cflexss gap-[1.3em] pt-[7em] text-sm font[400] text-justify">
-              <div className="w-[7em]">
+            <div className="cflexss gap-[1.3em] pt-[7em] sm:pt-[2em] text-sm sm:text-[1rem] font[600]">
+              <div className="w-[7em] sm:w-[8em]">
                 <Image src="Review.svg" width={100} height={100} alt="review" />
               </div>
               <p>
@@ -180,12 +180,12 @@ const SignUp = () => {
           </div>
         </div>
 
-        <div className="w-[55%] h-full bg-white pt-[4em] pb-[4em] pl-[6em] pr-[7em]">
+        <div className="w-[55%] h-full bg-white py-[3em] sm:py-[2em] pl-[6em] pr-[7em] sm:px-[1.5em] md1:w-full">
           <div className="cflexss w-full gap-[0.7em]">
-            <h1 className="text-[1.7rem] font-[700] text-primary3">
+            <h1 className="text-[1.7rem] font-[700] sm:font-[800] text-primary3">
               Create an Account
             </h1>
-            <p className="text-sm font-400 text-primary4">
+            <p className="text-sm sm:text-[1.1rem] font-400 text-[#52525B]">
               Join the CuriousKidz community and embark on an exciting journey
               of discovery and learning! Sign up today to unlock a world of
               educational adventures for your child.
@@ -217,7 +217,7 @@ const SignUp = () => {
                     type="text"
                     name="email"
                     placeholder="E.g annette.black@example.com"
-                    value={userDetails["email"]}                  
+                    value={userDetails["email"]}
                     onChange={handleChange}
                   />
                 </div>
@@ -234,7 +234,7 @@ const SignUp = () => {
                     type="text"
                     name="school"
                     placeholder="School Name"
-                    value={userDetails["school"]}                    
+                    value={userDetails["school"]}
                     onChange={handleChange}
                   />
                 </div>
@@ -243,15 +243,15 @@ const SignUp = () => {
                 )}
               </div>
 
-              <div className="sect">
+              <div className="block sect sm:hidden">
                 <p>Phone Number</p>
                 <PhoneInput
                   country={"ng"} // Default country code (optional)
                   inputStyle={{
-                    width:"100%",                    
+                    width: "100%",
                     color: "#AAA",
-                    fontSize: "0.7em",
-                    fontWeight: "400"                        
+                    fontSize: "0.7rem",
+                    fontWeight: "400",
                   }}
                   inputProps={{
                     name: "phoneNumber", // Set the name property of the input element
@@ -273,6 +273,39 @@ const SignUp = () => {
                 )}
               </div>
 
+              <div className="hidden sm:block sm:min-w-[90%]">
+                <div className="sect">
+                  <p>Phone Number</p>
+                  <PhoneInput
+                    country={"ng"} // Default country code (optional)
+                    inputStyle={{
+                      width: "100%",
+                      color: "#AAA",
+                      fontSize: "1.1rem",
+                      padding: "1.5em 0em 1.5em 2.5em",
+                      fontWeight: "400",
+                    }}
+                    inputProps={{
+                      name: "phoneNumber", // Set the name property of the input element
+                    }}
+                    value={userDetails["phoneNumber"]} // Initial phone number value (optional)
+                    onChange={(value, country, event) => {
+                      var name = event.target.name;
+                      setUserDetails({
+                        ...userDetails,
+                        [name]: value,
+                        country: country.name,
+                      });
+                      setChanging(!changing);
+                    }} // Handle phone number changes
+                  />
+
+                  {phoneError && (
+                    <p className="err">* Fill in a valid phone number</p>
+                  )}
+                </div>
+              </div>
+
               <div className="sect">
                 <p>Password</p>
                 <div className="inputCont">
@@ -281,7 +314,7 @@ const SignUp = () => {
                     type={hide ? "password" : "text"}
                     name="password"
                     placeholder="Password"
-                    value={userDetails["password"]}                    
+                    value={userDetails["password"]}
                     onChange={handleChange}
                   />
                   {hide ? (
@@ -301,7 +334,7 @@ const SignUp = () => {
                   )}
                 </div>
                 {passError && (
-                  <p className="text-primary1 text-[0.7rem] font-[400] flex flex-wrap w-[30em]">
+                  <p className="text-primary1 text-[0.7rem] sm:text-[0.9rem] font-[400] flex flex-wrap w-[30em]">
                     * Password should be at least 8 characters long and must
                     contain at least one character
                   </p>
@@ -314,16 +347,23 @@ const SignUp = () => {
                 </div>
               )}
 
+              <div className="flexbm text-[0.8rem] sm:text-[1rem]">
+                <div className="flexmm gap-[0.5em]">
+                  <input type="checkbox" />
+                  <p>Remember me</p>
+                </div>
+              </div>
+
               <button
                 type="submit"
-                className="flexmm gap-[0.5em] rounded-[2em] bg-primary1 px-[2.5em] py-[1em] text-white text-[0.8em] font-[600]"
+                className="flexmm gap-[0.5em] rounded-[2em] bg-primary1 px-[2.5em] py-[1em] text-white text-[0.8em] sm:text-[1rem] font-[600] sm:font-[400]"
                 onClick={handleSubmit}
               >
                 <p>Create account</p>
                 <ArrowRightOutline size="12px" />
               </button>
             </form>
-            <div className="text-[0.7rem] font-[400]">
+            <div className="text-[0.7rem] sm:text-[0.9rem] font-[400]">
               <p>
                 Already have an account?{" "}
                 <Link href="/signin">
