@@ -12,7 +12,7 @@ const About = () => {
 
           <PictureTextDivider imageUrl={"/about-1.jpeg"} bgColor="bg-primary6" imageClassNames={"w-[100%] rounded-[1.5em] margin-auto object-cover h-[100%]"} imageContainerClassNames={"h-[674px] p-[10px] bg-white rounded-[1.8em]"} imageFirst={true}>
             <div className='flex flex-col gap-3'>
-              <p className="text-[0.8em]">
+              <p className="text-[1em] font-[600]">
                 About Us
               </p>
 
