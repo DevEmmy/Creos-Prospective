@@ -84,8 +84,8 @@ const Contact = () => {
   return (
     <>
       <NavBar active={2} />
-      <div className="flexss px-xpadding py-[4em] bg-primary6 h-full flex-wrap">
-        <div className="flex flex-col justify-between items-start h-[100%] w-[40em] flex-shrink py-[4em] text-primary3 text-[0.8rem]">
+      <div className="flexms px-xpadding sm:px-[1.5em] py-[4em] sm1:pt-[0em] bg-primary6 h-full flex-wrap">
+        <div className="flex flex-col justify-between items-start h-[100%] w-[40em] flex-shrink py-[4em] text-primary3 text-[0.8rem] sm1:flex-grow">
           <div className="w-full cflexss gap-[1em]">
             <h1 className="font-[700] text-[1.7rem]">Contact Us</h1>
             <p className="w-[90%]">
@@ -124,9 +124,9 @@ const Contact = () => {
           </div>
         </div>
 
-        <div className="flexms h-[100%] w-[35em] flex-shrink pl-[6%]">
-          <div className="cflexss gap-[1em] w-[100%] p-[1.5em] px-[2em] bg-primary2">
-            <h1 className="text-primary1 font-[700] text-[1.5rem] w-[60%]">
+        <div className="flexms h-[100%] w-[35em] flex-shrink sm1:flex-grow pl-[6%] sm1:pl-0">
+          <div className="cflexss gap-[1em] w-[100%] p-[1.5em] px-[2em] sm:px-[1em] bg-primary2">
+            <h1 className="text-primary1 font-[700] text-[1.5rem] w-[60%] sm:w-full">
               Get in touch with us & let's talk
             </h1>
             <p className="text-primary4 font-[400] text-[0.9rem]">

@@ -1,7 +1,8 @@
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Button from "@/AtomicComponents/Button";
-import { ArrowRightOutline } from "heroicons-react";
+import { ArrowRightOutline, ChevronLeft, ChevronRight } from "heroicons-react";
 const ParentRiviews = [
   {
     star: "5star",
@@ -42,19 +43,37 @@ const ParentRiviews = [
 ];
 
 const Testimonials = () => {
+  const [id, setId] = useState(0);
+  const [next, setNext] = useState(false);
+  const [prev, setPrev] = useState(false);
+
+  useEffect(() => {
+    if(id === 0){
+      setNext(true)
+      setPrev(false)
+    }
+    else if(id === ParentRiviews.length-1){
+      setNext(false)
+      setPrev(true)
+    }
+    else{
+      setNext(true)
+      setPrev(true)
+    }
+  }, [id]);
   return (
     <>
-      <div className="w-full cflexsm gap-[3em] px-xpadding py-[4em]">
-        <div className="w-full cflexsm gap-[0.5em] font-[400] text-[0.9rem]">
-          <p className="font-[700] text-[1.5rem] text-[#012B1D]">
+      <div className="bg-[#FAFAFA] w-full cflexsm gap-[3em] sm:gap-[2em] px-xpadding py-[4em] sm:px-[1em] sm:py-[2em]">
+        <div className="w-full cflexsm sm:items-start gap-[0.5em] font-[400] text-[0.9rem] sm:text-[1.1rem]">
+          <p className="font-[700] sm:font-[800] sm:text-[1.7rem] text-[1.5rem] text-[#012B1D]">
             Parent Testimonials
           </p>
-          <p>
+          <p className="text-[#333]">
             Hear from parents whose children have experienced the magic of
             CuriousKidz. See the impact on their confidence and academic growth.
           </p>
         </div>
-        <div className="flexbs gap-[4em] w-full flex-wrap">
+        <div className="block flexbs gap-[4em] w-full flex-wrap sm:hidden">
           {ParentRiviews.map((review, i) => {
             return (
               <>
@@ -63,14 +82,44 @@ const Testimonials = () => {
             );
           })}
         </div>
-        <div className="flexss gap-[1em] font-[700] text-[0.8rem] flex-wrap">
-          <Link href="/signup">
-            <Button className="bg-primary1 text-white flexmm gap-[0.5em] px-[2.5em] py-[1em] rounded-full">
+        <div className="hidden sm:block w-full">
+          <div className="flexbs gap-[4em] w-full flex-wrap">
+            {ParentRiviews.map((review, i) => {
+              return <>{i == id && <Reviews {...review} key={i} />}</>;
+            })}
+          </div>
+        </div>
+        <div className="hidden sm:block">
+          <div className="flexmm w-full gap-[1em] pt-[2em]">
+            <ChevronLeft
+              onClick={() => {
+                if (id !== 0) {
+                  setId(id - 1);                  
+                } 
+              }}
+              color={prev ? "black" : "gray"}
+              className="cursor-pointer"
+            />
+
+            <ChevronRight
+              onClick={() => {
+                if (id !== ParentRiviews.length-1) {
+                  setId(id + 1);                  
+                } 
+              }}
+              color={next ? "black" : "gray"}
+              className="cursor-pointer"
+            />
+          </div>
+        </div>
+        <div className="flexss sm1:justify-center gap-[1em] font-[700] text-[0.8rem] flex-wrap sm1:w-full">
+          <Link href="/signup" className="sm:flex flex-grow">
+            <Button className="border border-[0.2em] border-primary1 bg-primary1 text-white flexmm gap-[0.5em] px-[2.5em] py-[1em] rounded-full sm:w-full">
               <p>Enroll now</p> <ArrowRightOutline size="1em" />
             </Button>
           </Link>
-          <Link href="/">
-            <Button className="border border-[0.2em] border-primary1 text-primary1 flexmm gap-[0.5em] px-[2.5em] py-[1em] rounded-full">
+          <Link href="/" className="sm:flex flex-grow">
+            <Button className="border border-[0.2em] border-primary1 text-primary1 flexmm gap-[0.5em] px-[2.5em] py-[1em] rounded-full sm:w-full">
               <p>Login as a guest</p>
             </Button>
           </Link>
@@ -86,8 +135,8 @@ const Reviews = (props) => {
   const { star, content1, content2, image, name } = props;
   return (
     <>
-      <div className="cflexss gap-[1em] w-[30em] flex-grow font-[600] text-[#090914] text-[0.8rem]">
-        <div className="flexmm w-[7em]">
+      <div className="cflexss gap-[1em] w-[30em] flex-grow font-[600] text-[#090914] text-[0.8rem] sm:text-[1rem]">
+        <div className="flexmm w-[7em] sm:w-[10em]">
           <Image src={`${star}.svg`} width={100} height={100} alt={`${star}`} />
         </div>
         <p>"{content1}</p>

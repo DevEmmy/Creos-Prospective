@@ -14,9 +14,9 @@ const SignIn = () => {
     password: "",
   });
 
-  useEffect(() => {
-    eMail.current.focus();
-  }, []);
+  // useEffect(() => {
+  //   eMail.current.focus();
+  // }, []);
 
   useEffect(() => {
     if (
@@ -38,7 +38,7 @@ const SignIn = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (valid) {      
+    if (valid) {
       setLoginDetails({
         email: "",
         password: "",
@@ -49,25 +49,25 @@ const SignIn = () => {
   };
   return (
     <>
-      <div className="w-full h-full flexss overflow-auto flex-wrap">
-        <div className="w-[45%] h-full bg-primary1 pt-[4em] pb-[6em] px-[7%] text-primary2">
+      <div className="h-full w-full flexss flex-wrap">
+        <div className="w-[45%] h-full bg-primary1 pt-[4em] sm:py-[2em] pb-[6em] px-[5em] text-primary2 sm:px-[1.5em] md1:w-full">
           <div className="cflexss gap-[1.5em]">
-            <Link href="/" className="w-[15em]">
+            <Link href="/" className="w-[15em] sm:w-[12em]">
               <Image src="logo.svg" width={100} height={100} alt="CSkidz" />
             </Link>
             <div>
-              <h1 className="text-[2.3rem] font-[800]">
+              <h1 className="text-[2.3rem] sm:text-[1.8rem] font-[800]">
                 Welcome back to CuriousKidz!
               </h1>
-              <p className="text-sm font-[400] pt-[0.5em] text-justify">
+              <p className="text-sm sm:text-[1rem] font-[400] pt-[0.5em]">
                 We're thrilled to have you back with CuriousKidz! Rediscover the
                 joy of learning with our innovative courses and foster
                 creativity, critical thinking, and problem-solving skills. Let's
                 make learning an exciting adventure
               </p>
             </div>
-            <div className="cflexss gap-[1.3em] pt-[7em] text-sm font[400] text-justify">
-              <div className="w-[7em]">
+            <div className="cflexss gap-[1.3em] pt-[7em] sm:pt-[2em] text-sm sm:text-[1rem] font[600]">
+              <div className="w-[7em] sm:w-[8em]">
                 <Image src="Review.svg" width={100} height={100} alt="review" />
               </div>
               <p>
@@ -96,10 +96,12 @@ const SignIn = () => {
           </div>
         </div>
 
-        <div className="w-[55%] h-full bg-white py-[4em] px-[8%]">
+        <div className="w-[55%] h-full bg-white py-[4em] sm:py-[2em] pl-[6em] pr-[7em] sm:px-[1.5em] md1:w-full">
           <div className="cflexss w-full gap-[0.7em]">
-            <h1 className="text-[1.7rem] font-[700] text-primary3">Sign In</h1>
-            <p className="text-sm font-400 text-primary4">
+            <h1 className="text-[1.7rem] font-[700] sm:font-[800] text-primary3">
+              Sign In
+            </h1>
+            <p className="text-sm sm:text-[1.1rem] font-400 text-[#52525B]">
               Sign in to continue your learning journey and explore a world of
               endless possibilities.
             </p>
@@ -155,7 +157,7 @@ const SignIn = () => {
                 </div>
               )}
 
-              <div className="flexbm w-[93%] text-[0.8rem]">
+              <div className="flexbm w-[93%] text-[0.8rem] sm:text-[1rem]">
                 <div className="flexmm gap-[0.5em]">
                   <input type="checkbox" />
                   <p>Remember me</p>
@@ -165,14 +167,14 @@ const SignIn = () => {
 
               <button
                 type="submit"
-                className="flexmm gap-[0.5em] rounded-[2em] bg-primary1 px-[2.5em] py-[1em] text-white text-[0.8em] font-[600]"
+                className="flexmm gap-[0.5em] rounded-[2em] bg-primary1 px-[2.5em] py-[1em] text-white text-[0.8em] sm:text-[1rem] font-[600] sm:font-[400]"
                 onClick={handleSubmit}
               >
                 <p>Sign In</p>
                 <ArrowRightOutline size="12px" />
               </button>
             </form>
-            <div className="text-[0.7rem] font-[400]">
+            <div className="text-[0.7rem] sm:text-[0.9rem] font-[400]">
               <p>
                 Don't have an account?{" "}
                 <Link href="/signup">
@@ -182,9 +184,9 @@ const SignIn = () => {
                 </Link>
               </p>
             </div>
-            <div className="flexsm flex-wrap gap-[1em] font-[400] text-[0.8rem] text-[#344054] w-[93%]">
+            <div className="flexsm flex-wrap gap-[1em] font-[400] text-[0.8rem] sm:text-[1rem] text-[#344054] w-[93%]">
               <div className="box">
-                <div className="w-[1.5em]">
+                <div className="w-[1.5em] sm:w-[1.2em]">
                   <Image
                     src="google.svg"
                     width={100}
