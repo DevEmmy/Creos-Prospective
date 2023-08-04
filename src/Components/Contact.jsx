@@ -84,40 +84,40 @@ const Contact = () => {
   return (
     <>
       <NavBar active={2} />
-      <div className="flexms px-xpadding sm:px-[1.5em] py-[4em] sm1:pt-[0em] bg-primary6 h-full flex-wrap">
-        <div className="flex flex-col justify-between items-start h-[100%] w-[40em] flex-shrink py-[4em] text-primary3 text-[0.8rem] sm1:flex-grow">
+      <div className="flexms px-xpadding sm:px-[1.5em] py-[4em] sm1:pb-[2em] sm1:pt-[0em] bg-primary6 h-full flex-wrap">
+        <div className="flex flex-col justify-between items-start h-[100%] w-[40em] flex-shrink py-[4em] sm1:pt-0 sm1:pb-[2em] text-primary3 text-[0.8rem] sm1:text-[1.1rem] sm1:flex-grow">
           <div className="w-full cflexss gap-[1em]">
             <h1 className="font-[700] text-[1.7rem]">Contact Us</h1>
-            <p className="w-[90%]">
+            <p className="w-[90%] sm:w-full">
               We'd love to hear from you! If you have any questions, inquiries,
               or feedback, please fill out the form below, and our team will get
               back to you as soon as possible.
             </p>
           </div>
 
-          <div className="w-full cflexss gap-[2em] pt-[18em]">
-            <div className="w-full flexbm flex-wrap">
-              <div className="cfledxdmm gap-[0.5em] w-[70%]">
-                <p className="font-[700] text-[1rem]">Business Hours:</p>
+          <div className="w-full cflexss gap-[2em] pt-[18em] sm:pt-[1em]">
+            <div className="w-full flexbm flex-wrap sm:gap-[1em]">
+              <div className="cfledxdmm gap-[0.5em] w-[70%] sm:w-full">
+                <p className="font-[700] text-[1rem] sm:text-[1.1rem] sm:pb-[1em]">Business Hours:</p>
                 <p>Monday to Friday: 9:00 AM - 6:00 PM (WAT)</p>
                 <p>Saturday and Sunday: Closed</p>
               </div>
 
-              <div className="cfledxdmm gap-[0.5em] w-[30%]">
-                <p className="font-[700] text-[1rem]">Headquaters:</p>
+              <div className="cfledxdmm gap-[0.5em] w-[30%] sm:w-full">
+                <p className="font-[700] text-[1rem] sm:text-[1.1rem] sm:pb-[1em]">Headquaters:</p>
                 <p>23 Majekodunmi St,</p>
                 <p>Alagbado 102213, Lagos</p>
               </div>
             </div>
 
-            <div className="w-full flexbm flex-wrap">
-              <div className="cfledxdmm gap-[0.5em] w-[70%]">
-                <p className="font-[700] text-[1rem]">Email:</p>
+            <div className="w-full flexbm flex-wrap sm:gap-[1em]">
+              <div className="cfledxdmm gap-[0.5em] w-[70%] sm:w-full">
+                <p className="font-[700] text-[1rem] sm:text-[1.1rem] sm:pb-[1em]">Email:</p>
                 <p>support@curiouskidz.com.ng</p>
               </div>
 
-              <div className="cfledxdmm gap-[0.5em] w-[30%]">
-                <p className="font-[700] text-[1rem]">Phone:</p>
+              <div className="cfledxdmm gap-[0.5em] w-[30%] sm:w-full">
+                <p className="font-[700] text-[1rem] sm:text-[1.1rem] sm:pb-[1em]">Phone:</p>
                 <p>+234 805 988 7668</p>
               </div>
             </div>
@@ -198,18 +198,18 @@ const Contact = () => {
                   <p className="err">*can't exceed 150 characters</p>
                 )}
               </div>
-              <div className="flexsm w-full gap-[1em] text-[0.7rem] text-primary4 font-[400]">
+              <div className="flexsm w-full gap-[1em] text-[0.7rem] text-[#AAAAAA] font-[400]">
                 <input type="checkbox" checked={agreement} onClick={(e)=>{
                     setAgreement(e.target.checked)
                     setChanging(!changing)
                 }}/>
                 <p>
-                  you agree to our friendly <span className="underline cursor-pointer">privacy policy</span>
+                  you agree to our friendly <span className="underline cursor-pointer">privacy policy.</span>
                 </p>
               </div>
               <button
                 type="submit"
-                className="w-full py-3 px-5 bg-primary1 font-[700] cursor-pointer rounded-xl text-primary2"
+                className="w-full py-3 px-5 bg-primary1 font-[700] sm:font-[400] sm:text-[1rem] cursor-pointer rounded-full text-primary2"
                 onClick={handleSubmit}
               >
                 Send message

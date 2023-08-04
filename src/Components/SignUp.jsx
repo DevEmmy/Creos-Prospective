@@ -143,14 +143,14 @@ const SignUp = () => {
               <h1 className="text-[2.3rem] sm:text-[1.8rem] font-[800]">
                 Welcome to CuriousKidz!
               </h1>
-              <p className="text-sm sm:text-[1rem] font-[400] pt-[0.5em]">
+              <p className="text-sm sm:text-[1rem] font-[400] pt-[0.5em] leading-[1.7em]">
                 By creating an account, you gain access to a diverse range of
                 engaging courses, interactive lessons, and hands-on projects
                 designed to inspire young minds. Let's nurture curiosity and
                 ignite a passion for learning together!
               </p>
             </div>
-            <div className="cflexss gap-[1.3em] pt-[7em] sm:pt-[2em] text-sm sm:text-[1rem] font[600]">
+            <div className="cflexss gap-[1.3em] pt-[7em] sm:pt-[2em] text-sm sm:text-[1rem] font[600] leading-[1.7em]">
               <div className="w-[7em] sm:w-[8em]">
                 <Image src="Review.svg" width={100} height={100} alt="review" />
               </div>
@@ -185,7 +185,7 @@ const SignUp = () => {
             <h1 className="text-[1.7rem] font-[700] sm:font-[800] text-primary3">
               Create an Account
             </h1>
-            <p className="text-sm sm:text-[1.1rem] font-400 text-[#52525B]">
+            <p className="text-sm sm:text-[1.1rem] font-400 text-[#52525B] leading-[1.5em]">
               Join the CuriousKidz community and embark on an exciting journey
               of discovery and learning! Sign up today to unlock a world of
               educational adventures for your child.
@@ -334,7 +334,7 @@ const SignUp = () => {
                   )}
                 </div>
                 {passError && (
-                  <p className="text-primary1 text-[0.7rem] sm:text-[0.9rem] font-[400] flex flex-wrap w-[30em]">
+                  <p className="text-primary1 text-[0.7rem] sm:text-[0.9rem] font-[400] flex flex-wrap w-[30em] sm:w-full">
                     * Password should be at least 8 characters long and must
                     contain at least one character
                   </p>

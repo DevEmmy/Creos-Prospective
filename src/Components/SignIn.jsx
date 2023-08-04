@@ -59,14 +59,14 @@ const SignIn = () => {
               <h1 className="text-[2.3rem] sm:text-[1.8rem] font-[800]">
                 Welcome back to CuriousKidz!
               </h1>
-              <p className="text-sm sm:text-[1rem] font-[400] pt-[0.5em]">
+              <p className="text-sm sm:text-[1rem] font-[400] pt-[0.5em] leading-[1.7em]">
                 We're thrilled to have you back with CuriousKidz! Rediscover the
                 joy of learning with our innovative courses and foster
                 creativity, critical thinking, and problem-solving skills. Let's
                 make learning an exciting adventure
               </p>
             </div>
-            <div className="cflexss gap-[1.3em] pt-[7em] sm:pt-[2em] text-sm sm:text-[1rem] font[600]">
+            <div className="cflexss gap-[1.3em] pt-[7em] sm:pt-[2em] text-sm sm:text-[1rem] font[600] leading-[1.7em]">
               <div className="w-[7em] sm:w-[8em]">
                 <Image src="Review.svg" width={100} height={100} alt="review" />
               </div>
@@ -101,7 +101,7 @@ const SignIn = () => {
             <h1 className="text-[1.7rem] font-[700] sm:font-[800] text-primary3">
               Sign In
             </h1>
-            <p className="text-sm sm:text-[1.1rem] font-400 text-[#52525B]">
+            <p className="text-sm sm:text-[1.1rem] font-400 text-[#52525B] leading-[1.5em]">
               Sign in to continue your learning journey and explore a world of
               endless possibilities.
             </p>

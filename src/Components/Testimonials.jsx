@@ -63,7 +63,7 @@ const Testimonials = () => {
   }, [id]);
   return (
     <>
-      <div className="bg-[#FAFAFA] w-full cflexsm gap-[3em] sm:gap-[2em] px-xpadding py-[4em] sm:px-[1em] sm:py-[2em]">
+      <div className="bg-[#FAFAFA] w-full cflexsm gap-[3em] sm:gap-[2em] px-xpadding py-[4em] sm:px-[1.5em] sm:py-[2em]">
         <div className="w-full cflexsm sm:items-start gap-[0.5em] font-[400] text-[0.9rem] sm:text-[1.1rem]">
           <p className="font-[700] sm:font-[800] sm:text-[1.7rem] text-[1.5rem] text-[#012B1D]">
             Parent Testimonials
@@ -135,7 +135,7 @@ const Reviews = (props) => {
   const { star, content1, content2, image, name } = props;
   return (
     <>
-      <div className="cflexss gap-[1em] w-[30em] flex-grow font-[600] text-[#090914] text-[0.8rem] sm:text-[1rem]">
+      <div className="cflexss gap-[1em] w-[30em] flex-grow font-[600] text-[#090914] text-[0.8rem] sm:text-[1rem] leading-[1.7rem]">
         <div className="flexmm w-[7em] sm:w-[10em]">
           <Image src={`${star}.svg`} width={100} height={100} alt={`${star}`} />
         </div>

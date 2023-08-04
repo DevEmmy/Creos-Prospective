@@ -10,30 +10,30 @@ const About = () => {
     <>
         <NavBar active={1}/>
 
-          <PictureTextDivider imageUrl={"/about-1.jpeg"} bgColor="bg-primary6" imageClassNames={"w-[100%] rounded-[1.5em] margin-auto object-cover h-[100%]"} imageContainerClassNames={"h-[674px] p-[10px] bg-white rounded-[1.8em]"} imageFirst={true}>
-            <div className='flex flex-col gap-3'>
+          <PictureTextDivider imageUrl={"/about-1.jpeg"} bgColor="bg-primary6" imageClassNames={"w-[100%] rounded-[1.5em] margin-auto object-cover h-[100%]"} imageContainerClassNames={"h-[674px] sm:h-[500px] p-[10px] bg-white rounded-[1.8em]"} imageFirst={true}>
+            <div className='flex flex-col gap-[1em] sm:gap-[0.5em] leading-[1.7em] sm:text-[#333]'>
               <p className="text-[1em] font-[600]">
                 About Us
               </p>
 
-              <h3 className="text-[1.6em] font-[700] text-primary1">
+              <h3 className="text-[1.6em] sm:text-[1.8rem] font-[700] sm:font-[800] text-primary1 sm:leading-[1.5em]">
                 Unleashing Curiosity and Empowering Young Minds
               </h3>
 
-              <p className="text-[1.0em]">
+              <p className="text-[1.0em] pt-[1em]">
               Welcome to CuriousKidz, an innovative educational method that bridges the gap between conventional education and the exciting world of STEAM (Science, Technology, Engineering, Arts, and Mathematics).
               </p>
 
-              <p className="text-[1.0em]">
+              <p className="text-[1.0em] pt-[1em]">
                 At CuriousKidz, we believe that every young mind holds boundless potential, waiting to be unleashed through curiosity, creativity, and problem-solving skills.
               </p>
 
-              <div className='flex gap-3 items-center text-[0.8em] font-[700] sm:flex-col sm:items-start'>
-                <Button className={"flex items-center gap-1 rounded-full px-[2.5em] py-[1em] text-white bg-primary1 sm:w-full sm:justify-center"}>
+              <div className='flexsm gap-3 text-[0.8em] font-[700] sm:items-start pt-[1em] sm:w-full flex-wrap'>
+                <Button className={"flex items-center gap-1 rounded-full px-[2.5em] py-[1em] text-white bg-primary1 flex-grow justify-center"}>
                   Enroll now <FaArrowRight />
                 </Button>
 
-                <Button className={"flex items-center gap-1 rounded-full px-[2.5em] py-[0.9em] text-primary1 bg-transparent border-primary1 border-2 sm:w-full sm:justify-center"}>
+                <Button className={"flex items-center gap-1 rounded-full px-[2.5em] py-[0.9em] text-primary1 bg-transparent border-primary1 border-2 flex-grow justify-center"}>
                   Login as a guest
                 </Button>
               </div>
@@ -41,7 +41,7 @@ const About = () => {
           </PictureTextDivider>
 
           <PictureTextDivider imageUrl={"/about-2.png"} bgColor={"bg-transparent"} imageFirst={false}>
-              <div className="flex flex-col gap-3">
+              <div className="flex flex-col gap-[1.5em] leading-[1.7em] sm:text-[#333] sm:pt-[2em]">
               <h3 className="text-primary1 font-[700] text-[1.6em]">
                 Our Vision
               </h3>
@@ -58,7 +58,7 @@ const About = () => {
 
           <div className='bg-[#FAFAFA]'>
           <PictureTextDivider imageUrl={"/about-3.png"} bgColor={"bg-transparent"} imageFirst={true}>
-              <div className="flex flex-col gap-3">
+              <div className="flex flex-col gap-[1.5em] leading-[1.7em] sm:text-[#333] pt-[2em]">
               <h3 className="text-primary1 font-[700] text-[1.6em]">
                 Overcoming Chalenges
               </h3>
@@ -79,8 +79,8 @@ const About = () => {
           </div>
 
           <PictureTextDivider imageUrl={"/about-4.png"} bgColor={"bg-transparent"} imageFirst={false}>
-              <div className="flex flex-col gap-3">
-              <h3 className="text-primary1 font-[700] text-[1.6em]">
+              <div className="flex flex-col gap-[1.5em] leading-[1.7em] sm:text-[#333] pt-[2em]">
+              <h3 className="text-primary1 font-[700] text-[1.6em] leading-[1.5em]">
                 Feeling Curiousity, Curbing Boredom
               </h3>
 
@@ -96,8 +96,8 @@ const About = () => {
 
           <div className='bg-[#FAFAFA]'>
           <PictureTextDivider imageUrl={"/about-5.png"} imageFirst={true}>
-            <div className='flex flex-col gap-3'>
-              <h3 className="text-primary1 font-[700] text-[1.6em]">
+            <div className='flex flex-col gap-[1.5em] leading-[1.7em] sm:text-[#333] pt-[2em]'>
+              <h3 className="text-primary1 font-[700] text-[1.6em] leading-[1.5em]">
                 Nuturing a Passion for Knowledge
               </h3>
 
@@ -113,30 +113,40 @@ const About = () => {
           </PictureTextDivider>
 
           <PictureTextDivider imageUrl={"/about-6.png"} imageFirst={false}>
-            <div className='flex flex-col gap-3'>
+            <div className='flex flex-col gap-[1.5em] leading-[1.7em] sm:text-[#333] pt-[2em]'>
               <h3 className="text-primary1 font-[700] text-[1.6em]">
                 Our Commitment
               </h3>
 
               <p className="text-[1.0em]">
-              Welcome to CuriousKidz, an innovative educational method that bridges the gap between conventional education and the exciting world of STEAM (Science, Technology, Engineering, Arts, and Mathematics).
+              At CuriousKidz, we are committed to cultivating a generation of young learners who possess a genuine love for knowledge. By providing an entertaining and insightful approach to learning, we aim to inspire students to reach for the stars and pursue advanced disciplines in higher education.
               </p>
 
               <p className="text-[1.0em]">
-                At CuriousKidz, we believe that every young mind holds boundless potential, waiting to be unleashed through curiosity, creativity, and problem-solving skills.
+              Join us on this thrilling journey of discovery and growth. Together, let's unlock the potential within each young mind, nurturing curious minds that will shape the future of our world.
               </p>
-
-              <div className='flex gap-3 items-center text-[0.8em] font-[700] sm:flex-col'>
-                <Button className={"flex items-center gap-1 rounded-full px-[2.5em] py-[1em] text-white bg-primary1 sm:w-full sm:justify-center"}>
+              <div className=' block flexsm gap-3 text-[0.8em] font-[700] sm:items-start pt-[1em] sm:w-full flex-wrap sm:hidden'>
+                <Button className={"flex items-center gap-1 rounded-full px-[2.5em] py-[1em] text-white bg-primary1 flex-grow justify-center"}>
                   Enroll now <FaArrowRight />
                 </Button>
 
-                <Button className={"flex items-center gap-1 rounded-full px-[2.5em] py-[0.9em] text-primary1 bg-transparent border-primary1 border-2 sm:w-full sm:justify-center"}>
+                <Button className={"flex items-center gap-1 rounded-full px-[2.5em] py-[0.9em] text-primary1 bg-transparent border-primary1 border-2 flex-grow justify-center"}>
                   Login as a guest
                 </Button>
-              </div>
+              </div>              
             </div>
-          </PictureTextDivider>
+          </PictureTextDivider>  
+          <div className="hidden sm:block w-full sm:px-xpadding">
+          <div className='flexsm gap-3 text-[0.8em] font-[700] sm:items-start pt-[1em] sm:w-full flex-wrap bg-[#FAFAFA] pb-[5em]'>
+                <Button className={"flex items-center gap-1 rounded-full px-[2.5em] py-[1em] text-white bg-primary1 flex-grow justify-center"}>
+                  Enroll now <FaArrowRight />
+                </Button>
+
+                <Button className={"flex items-center gap-1 rounded-full px-[2.5em] py-[0.9em] text-primary1 bg-transparent border-primary1 border-2 flex-grow justify-center"}>
+                  Login as a guest
+                </Button>
+          </div> 
+          </div>                 
           </div>
 
         <Footer />
