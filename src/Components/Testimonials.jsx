@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { motion } from "framer-motion"
 import Image from "next/image";
 import Link from "next/link";
 import Button from "@/AtomicComponents/Button";
@@ -45,7 +46,7 @@ const ParentRiviews = [
 const Testimonials = () => {
   const [id, setId] = useState(0);
   const [next, setNext] = useState(false);
-  const [prev, setPrev] = useState(false);
+  const [prev, setPrev] = useState(false);  
 
   useEffect(() => {
     if(id === 0){
@@ -114,12 +115,12 @@ const Testimonials = () => {
         </div>
         <div className="flexss sm1:justify-center gap-[1em] font-[700] text-[0.8rem] flex-wrap sm1:w-full">
           <Link href="/signup" className="sm:flex flex-grow">
-            <Button className="border border-[0.2em] border-primary1 bg-primary1 text-white flexmm gap-[0.5em] px-[2.5em] py-[1em] rounded-full sm:w-full">
+            <Button className="border-[0.2em] border-primary1 bg-primary1 text-white flexmm gap-[0.5em] px-[2.5em] py-[1em] rounded-full sm:w-full">
               <p>Enroll now</p> <ArrowRightOutline size="1em" />
             </Button>
           </Link>
           <Link href="/" className="sm:flex flex-grow">
-            <Button className="border border-[0.2em] border-primary1 text-primary1 flexmm gap-[0.5em] px-[2.5em] py-[1em] rounded-full sm:w-full">
+            <Button className="border-[0.2em] border-primary1 text-primary1 flexmm gap-[0.5em] px-[2.5em] py-[1em] rounded-full sm:w-full">
               <p>Login as a guest</p>
             </Button>
           </Link>
@@ -131,11 +132,26 @@ const Testimonials = () => {
 
 export default Testimonials;
 
-const Reviews = (props) => {
-  const { star, content1, content2, image, name } = props;
+const Reviews = (props) => {  
+  const { star, content1, content2, image, name } = props;  
+  const graduallyAppear = {
+    hidden: {
+      opacity: 0,
+    },
+    visible: {
+      opacity: 1,
+      transition: {
+        duration: 1.5,
+      },
+    },
+  };
   return (
     <>
-      <div className="cflexss gap-[1em] w-[30em] flex-grow font-[600] text-[#090914] text-[0.8rem] sm:text-[1rem] leading-[1.7rem]">
+      <motion.div 
+        variants={graduallyAppear}
+        initial="hidden"
+        animate="visible" 
+        className="cflexss gap-[1em] w-[30em] flex-grow font-[600] text-[#090914] text-[0.8rem] sm:text-[1rem] leading-[1.7rem] sm:h-[25em]">
         <div className="flexmm w-[7em] sm:w-[10em]">
           <Image src={`${star}.svg`} width={100} height={100} alt={`${star}`} />
         </div>
@@ -152,7 +168,7 @@ const Reviews = (props) => {
           </div>
           <p className="font-[800]">{name}</p>
         </div>
-      </div>
+      </motion.div>
     </>
   );
 };

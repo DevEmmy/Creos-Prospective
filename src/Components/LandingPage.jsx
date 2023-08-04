@@ -1,4 +1,3 @@
-import motion from "framer-motion"
 import React from "react";
 import NavBar from "@/AtomicComponents/NavBar";
 import Button from "@/AtomicComponents/Button";
@@ -13,7 +12,7 @@ import Link from "next/link";
 import Testimonials from "./Testimonials";
 import Footer from "@/AtomicComponents/Footer";
 
-const LandingPage = () => {
+const LandingPage = () => {  
   const Courses = [
     {
       image: "film",

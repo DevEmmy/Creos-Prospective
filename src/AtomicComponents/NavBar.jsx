@@ -1,5 +1,4 @@
 'use client'
-
 import Image from 'next/image'
 import Link from 'next/link'
 import Button from "./Button"
@@ -21,12 +20,13 @@ const NavBar = ({active=0}) => {
       title: "Contact Us",
       link: "/contact"
     }
-  ]
+  ] 
 
   const [showNav, setShowNav] = useState(false)
+
   return (
     <>
-        <nav className='bg-primary6 w-full flex justify-between items-center py-[20px] px-xpadding'>
+        <nav className={`bg-primary6 w-full flex justify-between items-center py-[20px] px-xpadding ${showNav && "fixed"}`}>
             <Link href="/" className="w-[15em] sm:w-[11em]">
               <Image src="/homeLogo.svg" width={100} height={100} alt="CSkidz" />
             </Link>
@@ -68,7 +68,8 @@ const NavBar = ({active=0}) => {
               }
             </div>
 
-            <div className={`fixed top-[70px] w-full md:hidden bg-primary6 h-full p-xpadding ${showNav? "left-0" : "left-[100%]"}`} >
+            <div className={`fixed top-[70px] sm:top-[68px] w-full md:hidden bg-primary6 h-full p-xpadding ${showNav? "left-0" : "left-[100%]"} transition-all z-[999]`}             
+            >
             <div className='flex gap-6 flex-col'>
               {
                 nav.map((item, i)=>{
