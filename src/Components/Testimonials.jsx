@@ -151,7 +151,7 @@ const Reviews = (props) => {
         variants={graduallyAppear}
         initial="hidden"
         animate="visible" 
-        className="cflexss gap-[1em] w-[30em] flex-grow font-[600] text-[#090914] text-[0.8rem] sm:text-[1rem] leading-[1.7rem] sm:h-[25em]">
+        className="cflexss gap-[1em] w-[30em] flex-grow font-[600] text-[#090914] text-[0.8rem] sm:text-[1rem] leading-[1.7rem] sm:min-h-[25em]">
         <div className="flexmm w-[7em] sm:w-[10em]">
           <Image src={`${star}.svg`} width={100} height={100} alt={`${star}`} />
         </div>
