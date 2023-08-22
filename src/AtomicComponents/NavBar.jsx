@@ -6,7 +6,7 @@ import React, { useState } from 'react'
 import { RiMenuFill } from 'react-icons/ri'
 import { HiX} from 'react-icons/hi'
 
-const NavBar = ({active=0}) => {
+const NavBar = ({active=0, background}) => {
   const nav = [
     {
       title: "Home",
@@ -19,6 +19,10 @@ const NavBar = ({active=0}) => {
     {
       title: "Contact Us",
       link: "/contact"
+    },
+    {
+      title: "Price",
+      link: "/price"
     }
   ] 
 
@@ -26,8 +30,8 @@ const NavBar = ({active=0}) => {
 
   return (
     <>
-        <nav className={`bg-primary6 w-full flex justify-between items-center py-[20px] px-xpadding ${showNav && "fixed"}`}>
-            <Link href="/" className="w-[15em] sm:w-[11em]">
+        <nav className={`bg-${background ? background : "primary6"} w-full flex justify-between items-center py-[20px] px-xpadding ${showNav && "fixed"}`}>
+            <Link href="/" className="w-[12em] sm:w-[11em]">
               <Image src="/homeLogo.svg" width={100} height={100} alt="CSkidz" />
             </Link>
 
