@@ -68,7 +68,7 @@ const NavBar = ({active=0}) => {
               }
             </div>
 
-            <div className={`fixed top-[70px] sm:top-[68px] w-full md:hidden bg-primary6 h-full p-xpadding ${showNav? "left-0" : "left-[100%]"} transition-all z-[999]`}             
+            <div className={`fixed top-[70px] sm:top-[60px] w-full md:hidden bg-primary6 h-full p-xpadding ${showNav? "left-0" : "left-[100%]"} transition-all z-[999]`}             
             >
             <div className='flex gap-6 flex-col'>
               {

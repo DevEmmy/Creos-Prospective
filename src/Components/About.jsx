@@ -60,7 +60,7 @@ const About = () => {
           <PictureTextDivider imageUrl={"/about-3.png"} bgColor={"bg-transparent"} imageFirst={true}>
               <div className="flex flex-col gap-[1.5em] leading-[1.7em] sm:text-[#333] pt-[2em]">
               <h3 className="text-primary1 font-[700] text-[1.6em]">
-                Overcoming Chalenges
+                Overcoming Challenges
               </h3>
 
               <p className='text-0.9em'>
@@ -115,7 +115,7 @@ const About = () => {
           <PictureTextDivider imageUrl={"/about-6.png"} imageFirst={false}>
             <div className='flex flex-col gap-[1.5em] leading-[1.7em] sm:text-[#333] pt-[2em]'>
               <h3 className="text-primary1 font-[700] text-[1.6em]">
-                Our Commitment
+                Our Committment
               </h3>
 
               <p className="text-[1.0em]">
