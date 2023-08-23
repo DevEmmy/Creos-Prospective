@@ -233,7 +233,7 @@ const Price = () => {
             </>
           )}
           <Link href="/signup" className="sm:w-full">
-            <Button className="bg-primary1 text-white flexmm gap-[0.5em] px-[8em] py-[1em] rounded-full sm:w-full">
+            <Button className="bg-primary1 text-white flexmm gap-[0.5em] px-[8em] sm:px-0 py-[1em] rounded-full sm:w-full">
               <p>Create account</p> <ArrowRightOutline size="1em" />
             </Button>
           </Link>
