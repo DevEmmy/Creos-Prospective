@@ -9,6 +9,7 @@ import { FaArrowRight } from "react-icons/fa";
 
 const Price = () => {
   const [enroll, setEnroll] = useState(false);
+  const [count, setCount] = useState(50);
   return (
     <>
       <NavBar active={3} background={"primary2"} />
@@ -25,16 +26,16 @@ const Price = () => {
             curiosity and learning is open to everyone.
           </p>
           <div className="flexss sm1:justify-center gap-[1em] font-[700] text-[0.8rem] flex-wrap sm1:w-full">
-            <Link href="/signup" className="sm:flex flex-grow">
-              <Button
-                className="border-[0.2em] border-primary1 bg-primary1 text-white flexmm gap-[0.5em] px-[2.5em] py-[1em] rounded-full sm:w-full"
-                onClick={() => {
-                  setEnroll(true);
-                }}
-              >
+            <div
+              className="sm:flex flex-grow"
+              onClick={() => {
+                setEnroll(true);
+              }}
+            >
+              <Button className="border-[0.2em] border-primary1 bg-primary1 text-white flexmm gap-[0.5em] px-[2.5em] py-[1em] rounded-full sm:w-full">
                 <p>Enroll now</p> <ArrowRightOutline size="1em" />
               </Button>
-            </Link>
+            </div>
             <Link href="/" className="sm:flex flex-grow">
               <Button className="border border-[0.2em] border-primary1 text-primary1 flexmm gap-[0.5em] px-[2.5em] py-[1em] rounded-full sm:w-full">
                 <p>Login as a guest</p>
@@ -46,7 +47,14 @@ const Price = () => {
         {enroll ? (
           <>
             <div className="w-full cflexmm gap-[2em]">
-              <input type="range" className="w-[90%]" background="#00AC76"/>
+              <div className="w-[90%] cflexmm">
+                <input
+                  type="range"
+                  className="w-full cursor-pointer"
+                  background="#00AC76"
+                />
+                <p className="pl-[2em] w-full">1 - {count}</p>
+              </div>
             </div>
           </>
         ) : (
@@ -71,8 +79,7 @@ const Price = () => {
                 <div
                   className="w-full"
                   onClick={() => {
-                    setEnroll(true);
-                    console.log("enrolliing2");
+                    setEnroll(true);                    
                   }}
                 >
                   <Button
@@ -116,8 +123,7 @@ const Price = () => {
                 <div
                   className="w-full"
                   onClick={() => {
-                    setEnroll(true);
-                    console.log("enrolliing2");
+                    setEnroll(true);                    
                   }}
                 >
                   <Button
