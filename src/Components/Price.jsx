@@ -1,3 +1,4 @@
+import { useState } from "react";
 import NavBar from "@/AtomicComponents/NavBar";
 import Footer from "@/AtomicComponents/Footer";
 import { ArrowRightOutline } from "heroicons-react";
@@ -7,6 +8,7 @@ import Image from "next/image";
 import { FaArrowRight } from "react-icons/fa";
 
 const Price = () => {
+  const [enroll, setEnroll] = useState(false);
   return (
     <>
       <NavBar active={3} background={"primary2"} />
@@ -24,7 +26,12 @@ const Price = () => {
           </p>
           <div className="flexss sm1:justify-center gap-[1em] font-[700] text-[0.8rem] flex-wrap sm1:w-full">
             <Link href="/signup" className="sm:flex flex-grow">
-              <Button className="border-[0.2em] border-primary1 bg-primary1 text-white flexmm gap-[0.5em] px-[2.5em] py-[1em] rounded-full sm:w-full">
+              <Button
+                className="border-[0.2em] border-primary1 bg-primary1 text-white flexmm gap-[0.5em] px-[2.5em] py-[1em] rounded-full sm:w-full"
+                onClick={() => {
+                  setEnroll(true);
+                }}
+              >
                 <p>Enroll now</p> <ArrowRightOutline size="1em" />
               </Button>
             </Link>
@@ -35,62 +42,96 @@ const Price = () => {
             </Link>
           </div>
         </div>
-        <div className="flexbm w-full gap-[1em] sm:gap-[2em] text-[0.9rem] font-[400] py-[3em] sm:py-[1em] flex-wrap sm:flex-col-reverse">
-          <div className="cflexms gap-[1em] max-w-[35em] h-full h-[40em] sm:h-full">
-            <p>For Individual Learners:</p>
-            <h1 className="font-[700] text-[1.5rem] text-primary1">
-              Unlock a World of Curiosity for Just ₦1500 per Term!
-            </h1>
-            <p>
-              Join the Curious Kids' community and embark on an adventure-filled
-              learning experience. For individual learners outside of school
-              settings, our pricing is as affordable as it is enriching.
-            </p>
-            <p>
-              For just ₦1500 per child per term, your young explorer gains
-              access to captivating educational videos, interactive challenges,
-              and a chance to earn exciting achievements.
-            </p>
-            <Button
-              className={
-                "flex items-center w-fit gap-1 rounded-full px-[2.5em] py-[1em] text-white bg-primary1 sm:w-full sm:justify-center"
-              }
-            >
-              Enroll now <FaArrowRight />
-            </Button>
-          </div>
-          <div className="max-w-[35em] flexmm">
-            <Image src="unlock.svg" width={100} height={100} alt="unlock" />
-          </div>
-        </div>
-        <div className="flexbm w-full gap-[1em] sm:gap-[2em] text-[0.9rem] font-[400] py-[3em] sm:py-[1em] flex-wrap">
-          <div className="max-w-[35em] flexmm">
-            <Image src="flexible.svg" width={100} height={100} alt="flexible" />
-          </div>
-          <div className="cflexms gap-[1em] max-w-[35em] h-full h-[40em] sm:h-full">
-            <p>For Schools and Institutions:</p>
-            <h1 className="font-[700] text-[1.5rem] text-primary1">
-              Flexible Pricing According to Student Population
-            </h1>
-            <p>
-              We believe in supporting schools of all sizes. Our school pricing
-              is designed to accommodate various student populations. For school
-              users, the cost is as low as N1200 per child per term.
-            </p>
-            <p>
-              Schools can pay according to their specific student population
-              category, ensuring that every student has the opportunity to
-              embark on a journey of exploration and discovery.
-            </p>
-            <Button
-              className={
-                "flex items-center w-fit gap-1 rounded-full px-[2.5em] py-[1em] text-white bg-primary1 sm:w-full sm:justify-center"
-              }
-            >
-              Enroll now <FaArrowRight />
-            </Button>
-          </div>
-        </div>
+
+        {enroll ? (
+          <>
+            <div className="w-full cflexmm gap-[2em]">
+              <input type="range" className="w-[90%]" background="#00AC76"/>
+            </div>
+          </>
+        ) : (
+          <>
+            <div className="flexbm w-full gap-[1em] sm:gap-[2em] text-[0.9rem] font-[400] py-[3em] sm:py-[1em] flex-wrap sm:flex-col-reverse">
+              <div className="cflexms gap-[1em] max-w-[35em] h-full h-[40em] sm:h-full">
+                <p>For Individual Learners:</p>
+                <h1 className="font-[700] text-[1.5rem] text-primary1">
+                  Unlock a World of Curiosity for Just ₦1500 per Term!
+                </h1>
+                <p>
+                  Join the Curious Kids' community and embark on an
+                  adventure-filled learning experience. For individual learners
+                  outside of school settings, our pricing is as affordable as it
+                  is enriching.
+                </p>
+                <p>
+                  For just ₦1500 per child per term, your young explorer gains
+                  access to captivating educational videos, interactive
+                  challenges, and a chance to earn exciting achievements.
+                </p>
+                <div
+                  className="w-full"
+                  onClick={() => {
+                    setEnroll(true);
+                    console.log("enrolliing2");
+                  }}
+                >
+                  <Button
+                    className={
+                      "flex items-center w-fit gap-1 rounded-full px-[2.5em] py-[1em] text-white bg-primary1 sm:w-full sm:justify-center"
+                    }
+                  >
+                    Enroll now <FaArrowRight />
+                  </Button>
+                </div>
+              </div>
+              <div className="max-w-[35em] flexmm">
+                <Image src="unlock.svg" width={100} height={100} alt="unlock" />
+              </div>
+            </div>
+            <div className="flexbm w-full gap-[1em] sm:gap-[2em] text-[0.9rem] font-[400] py-[3em] sm:py-[1em] flex-wrap">
+              <div className="max-w-[35em] flexmm">
+                <Image
+                  src="flexible.svg"
+                  width={100}
+                  height={100}
+                  alt="flexible"
+                />
+              </div>
+              <div className="cflexms gap-[1em] max-w-[35em] h-full h-[40em] sm:h-full">
+                <p>For Schools and Institutions:</p>
+                <h1 className="font-[700] text-[1.5rem] text-primary1">
+                  Flexible Pricing According to Student Population
+                </h1>
+                <p>
+                  We believe in supporting schools of all sizes. Our school
+                  pricing is designed to accommodate various student
+                  populations. For school users, the cost is as low as N1200 per
+                  child per term.
+                </p>
+                <p>
+                  Schools can pay according to their specific student population
+                  category, ensuring that every student has the opportunity to
+                  embark on a journey of exploration and discovery.
+                </p>
+                <div
+                  className="w-full"
+                  onClick={() => {
+                    setEnroll(true);
+                    console.log("enrolliing2");
+                  }}
+                >
+                  <Button
+                    className={
+                      "flex items-center w-fit gap-1 rounded-full px-[2.5em] py-[1em] text-white bg-primary1 sm:w-full sm:justify-center"
+                    }
+                  >
+                    Enroll now <FaArrowRight />
+                  </Button>
+                </div>
+              </div>
+            </div>
+          </>
+        )}
       </div>
       <Footer />
     </>
