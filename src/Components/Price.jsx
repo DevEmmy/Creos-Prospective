@@ -6,15 +6,17 @@ import Button from "@/AtomicComponents/Button";
 import Link from "next/link";
 import Image from "next/image";
 import { FaArrowRight } from "react-icons/fa";
+import { Range } from "react-range";
 
 const Price = () => {
-  const [enroll, setEnroll] = useState(false);
-  const [count, setCount] = useState(50);
+  const [plan, setPlan] = useState("term");
+  const [selected, setSelected] = useState("individual");
+  const [values, setValues] = useState([50]);
   return (
     <>
       <NavBar active={3} background={"primary2"} />
-      <div className="cflexss gap-[2em] w-full px-xpadding pt-[5em] pb-[3em] text-[0.9rem] font-[400]">
-        <div className="w-full cflexsm gap-[1em] text-center pb-[6em] sm:pb-0">
+      <div className="cflexss w-full px-xpadding pt-[5em] pb-[3em] text-[0.9rem] font-[400]">
+        <div className="w-full cflexsm gap-[1em] text-center pb-[6em]">
           <p>Pricing That Supports Learning Adventures</p>
           <h1 className="font-[700] text-[1.5rem] max-w-[25em]">
             Welcome to Curious Kids' Pricing Page! We believe in making quality
@@ -25,119 +27,217 @@ const Price = () => {
             learners and educational institutions, ensuring that the journey of
             curiosity and learning is open to everyone.
           </p>
-          <div className="flexss sm1:justify-center gap-[1em] font-[700] text-[0.8rem] flex-wrap sm1:w-full">
+          <div className="flexss sm1:justify-center gap-[1em] font-[700] text-[0.8rem] flex-wrap sm1:w-full mt-[2em] p-[0.5em] bg-white rounded-full shadow-md">
             <div
               className="sm:flex flex-grow"
               onClick={() => {
-                setEnroll(true);
+                setPlan("term");
               }}
             >
-              <Button className="border-[0.2em] border-primary1 bg-primary1 text-white flexmm gap-[0.5em] px-[2.5em] py-[1em] rounded-full sm:w-full">
-                <p>Enroll now</p> <ArrowRightOutline size="1em" />
+              <Button
+                className={
+                  plan === "term"
+                    ? "border-[0.2em] border-primary1 bg-primary1 text-white flexmm gap-[0.5em] px-[2.5em] py-[1em] rounded-full sm:w-full transition duration-500 ease-in-out"
+                    : "border border-[0.2em] border-primary1 text-primary1 flexmm gap-[0.5em] px-[2.5em] py-[1em] rounded-full sm:w-full transition duration-500 ease-in-out"
+                }
+              >
+                <p>Cost per term N</p>
               </Button>
             </div>
-            <Link href="/" className="sm:flex flex-grow">
-              <Button className="border border-[0.2em] border-primary1 text-primary1 flexmm gap-[0.5em] px-[2.5em] py-[1em] rounded-full sm:w-full">
-                <p>Login as a guest</p>
+            <div
+              className="sm:flex flex-grow"
+              onClick={() => {
+                setPlan("annual");
+              }}
+            >
+              <Button
+                className={
+                  plan === "term"
+                    ? "border border-[0.2em] border-primary1 text-primary1 flexmm gap-[0.5em] px-[2.5em] py-[1em] rounded-full sm:w-full transition duration-500 ease-in-out"
+                    : "border-[0.2em] border-primary1 bg-primary1 text-white flexmm gap-[0.5em] px-[2.5em] py-[1em] rounded-full sm:w-full transition duration-500 ease-in-out"
+                }
+              >
+                <p>Cost per annum N</p>
               </Button>
-            </Link>
+            </div>
           </div>
         </div>
 
-        {enroll ? (
-          <>
-            <div className="w-full cflexmm gap-[2em]">
-              <div className="w-[90%] cflexmm">
-                <input
-                  type="range"
-                  className="w-full cursor-pointer"
-                  background="#00AC76"
-                />
-                <p className="pl-[2em] w-full">1 - {count}</p>
-              </div>
-            </div>
-          </>
-        ) : (
-          <>
-            <div className="flexbm w-full gap-[1em] sm:gap-[2em] text-[0.9rem] font-[400] py-[3em] sm:py-[1em] flex-wrap sm:flex-col-reverse">
-              <div className="cflexms gap-[1em] max-w-[35em] h-full h-[40em] sm:h-full">
-                <p>For Individual Learners:</p>
-                <h1 className="font-[700] text-[1.5rem] text-primary1">
-                  Unlock a World of Curiosity for Just ₦1500 per Term!
-                </h1>
-                <p>
-                  Join the Curious Kids' community and embark on an
-                  adventure-filled learning experience. For individual learners
-                  outside of school settings, our pricing is as affordable as it
-                  is enriching.
-                </p>
-                <p>
-                  For just ₦1500 per child per term, your young explorer gains
-                  access to captivating educational videos, interactive
-                  challenges, and a chance to earn exciting achievements.
-                </p>
+        <div className="w-full cflexmm gap-[3em]">
+          <div className="w-[90%] cflexmm">
+            <Range
+              step={1}
+              min={0}
+              max={700}
+              values={values}
+              onChange={(newValues) => setValues(newValues)}
+              disabled={false}
+              renderTrack={({ props, children }) => (
                 <div
-                  className="w-full"
-                  onClick={() => {
-                    setEnroll(true);                    
+                  {...props}
+                  style={{
+                    ...props.style,
+                    height: "10px",
+                    width: "100%",
+                    backgroundColor: "#00AC76",
+                    borderRadius: "6px",
                   }}
                 >
-                  <Button
-                    className={
-                      "flex items-center w-fit gap-1 rounded-full px-[2.5em] py-[1em] text-white bg-primary1 sm:w-full sm:justify-center"
-                    }
-                  >
-                    Enroll now <FaArrowRight />
-                  </Button>
+                  {children}
                 </div>
-              </div>
-              <div className="max-w-[35em] flexmm">
-                <Image src="unlock.svg" width={100} height={100} alt="unlock" />
-              </div>
-            </div>
-            <div className="flexbm w-full gap-[1em] sm:gap-[2em] text-[0.9rem] font-[400] py-[3em] sm:py-[1em] flex-wrap">
-              <div className="max-w-[35em] flexmm">
-                <Image
-                  src="flexible.svg"
-                  width={100}
-                  height={100}
-                  alt="flexible"
-                />
-              </div>
-              <div className="cflexms gap-[1em] max-w-[35em] h-full h-[40em] sm:h-full">
-                <p>For Schools and Institutions:</p>
-                <h1 className="font-[700] text-[1.5rem] text-primary1">
-                  Flexible Pricing According to Student Population
-                </h1>
-                <p>
-                  We believe in supporting schools of all sizes. Our school
-                  pricing is designed to accommodate various student
-                  populations. For school users, the cost is as low as N1200 per
-                  child per term.
-                </p>
-                <p>
-                  Schools can pay according to their specific student population
-                  category, ensuring that every student has the opportunity to
-                  embark on a journey of exploration and discovery.
-                </p>
+              )}
+              renderThumb={({ props }) => (
                 <div
-                  className="w-full"
+                  {...props}
+                  style={{
+                    ...props.style,
+                    height: "25px",
+                    width: "25px",
+                    borderRadius: "50%",
+                    backgroundColor: "#00AC76",
+                    border: "3px solid white",
+                    outline: "none",
+                  }}
+                />
+              )}
+            />
+            <p className="pt-[0.5em] pl-[2em] w-full">1 - {values[0]}</p>
+          </div>
+          {plan === "term" ? (
+            <>
+              <div className="cflexmm gap-[2em] w-[25em] sm:w-full">
+                <div
+                  className={
+                    selected === "individual"
+                      ? "w-full flexsm gap-[1em] rounded-xl shadow-lg p-[1em] border-[3px] border-primary1 cursor-pointer transition duration-500 ease-in-out"
+                      : "w-full flexsm gap-[1em] rounded-xl p-[1em] cursor-pointer bg-[#F0F0F0] transition duration-500 ease-in-out"
+                  }
                   onClick={() => {
-                    setEnroll(true);                    
+                    setSelected("individual");
                   }}
                 >
-                  <Button
+                  <div
                     className={
-                      "flex items-center w-fit gap-1 rounded-full px-[2.5em] py-[1em] text-white bg-primary1 sm:w-full sm:justify-center"
+                      selected === "individual"
+                        ? "w-[1.3em] h-[1.3em] rounded-full border-[4px] border-primary1 transition duration-500 ease-in-out"
+                        : "w-[1.2em] h-[1.2em] rounded-full bg-white transition duration-500 ease-in-out"
+                    }
+                  />
+                  <div>
+                    <h3 className="font-[700] text-[1.1rem]">
+                      ₦ 2000/per term
+                    </h3>
+                    <p>For Individual Learners</p>
+                  </div>
+                </div>
+                <div
+                  className={
+                    selected === "individual"
+                      ? "w-full flexbm rounded-xl p-[1em] cursor-pointer bg-[#F0F0F0] transition duration-500 ease-in-out"
+                      : "w-full flexbm rounded-xl shadow-lg p-[1em] border-[3px] border-primary1 cursor-pointer transition duration-500 ease-in-out"
+                  }
+                  onClick={() => {
+                    setSelected("institution");
+                  }}
+                >
+                  <div className="flexmm gap-[1em]">
+                    <div
+                      className={
+                        selected === "individual"
+                          ? "w-[1.2em] h-[1.2em] rounded-full bg-white transition duration-500 ease-in-out"
+                          : "w-[1.3em] h-[1.3em] rounded-full border-[4px] border-primary1 transition duration-500 ease-in-out"
+                      }
+                    />
+                    <div>
+                      <h3 className="font-[700] text-[1.1rem]">
+                        ₦ 60,000/per term
+                      </h3>
+                      <p>For Schools and Institutions</p>
+                    </div>
+                  </div>
+                  <div
+                    className={
+                      selected === "individual"
+                        ? "bg-[#AAAAAA] p-[0.3em] px-[1em] rounded-full text-white"
+                        : "bg-primary1 p-[0.3em] px-[1em] rounded-full text-white"
                     }
                   >
-                    Enroll now <FaArrowRight />
-                  </Button>
+                    <p>1 - {values[0]}</p>
+                  </div>
                 </div>
               </div>
-            </div>
-          </>
-        )}
+            </>
+          ) : (
+            <>
+              <div className="cflexmm gap-[2em] w-[25em] sm:w-full">
+                <div
+                  className={
+                    selected === "individual"
+                      ? "w-full flexsm gap-[1em] rounded-xl shadow-lg p-[1em] border-[3px] border-primary1 cursor-pointer transition duration-500 ease-in-out"
+                      : "w-full flexsm gap-[1em] rounded-xl p-[1em] cursor-pointer bg-[#F0F0F0] transition duration-500 ease-in-out"
+                  }
+                  onClick={() => {
+                    setSelected("individual");
+                  }}
+                >
+                  <div
+                    className={
+                      selected === "individual"
+                        ? "w-[1.3em] h-[1.3em] rounded-full border-[4px] border-primary1 transition duration-500 ease-in-out"
+                        : "w-[1.2em] h-[1.2em] rounded-full bg-white transition duration-500 ease-in-out"
+                    }
+                  />
+                  <div>
+                    <h3 className="font-[700] text-[1.1rem]">
+                      ₦ 5000/per annum
+                    </h3>
+                    <p>For Individual Learners</p>
+                  </div>
+                </div>
+                <div
+                  className={
+                    selected === "individual"
+                      ? "w-full flexbm rounded-xl p-[1em] cursor-pointer bg-[#F0F0F0] transition duration-500 ease-in-out"
+                      : "w-full flexbm rounded-xl shadow-lg p-[1em] border-[3px] border-primary1 cursor-pointer transition duration-500 ease-in-out"
+                  }
+                  onClick={() => {
+                    setSelected("institution");
+                  }}
+                >
+                  <div className="flexmm gap-[1em]">
+                    <div
+                      className={
+                        selected === "individual"
+                          ? "w-[1.2em] h-[1.2em] rounded-full bg-white transition duration-500 ease-in-out"
+                          : "w-[1.3em] h-[1.3em] rounded-full border-[4px] border-primary1 transition duration-500 ease-in-out"
+                      }
+                    />
+                    <div>
+                      <h3 className="font-[700] text-[1.1rem]">
+                        ₦ 180,000/per annum
+                      </h3>
+                      <p>For Schools and Institutions</p>
+                    </div>
+                  </div>
+                  <div
+                    className={
+                      selected === "individual"
+                        ? "bg-[#AAAAAA] p-[0.3em] px-[1em] rounded-full text-white"
+                        : "bg-primary1 p-[0.3em] px-[1em] rounded-full text-white"
+                    }
+                  >
+                    <p>1 - {values[0]}</p>
+                  </div>
+                </div>
+              </div>
+            </>
+          )}
+          <Link href="/signup" className="sm:w-full">
+            <Button className="bg-primary1 text-white flexmm gap-[0.5em] px-[8em] py-[1em] rounded-full sm:w-full">
+              <p>Create account</p> <ArrowRightOutline size="1em" />
+            </Button>
+          </Link>
+        </div>
       </div>
       <Footer />
     </>

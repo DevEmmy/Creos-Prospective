@@ -23,7 +23,7 @@
   @apply flex justify-center items-center gap-[0.5em] px-[1.5em] py-[1em] sm:py-[0.5em] w-[100%] border border-[1px] mt-[1em] border-[#AAA] rounded-[0.5em] cursor-pointer;
 }
 .flexbm {
-  @apply flex justify-between items-start;
+  @apply flex justify-between items-center;
 }
 .flexbs {
   @apply flex justify-between items-start;
