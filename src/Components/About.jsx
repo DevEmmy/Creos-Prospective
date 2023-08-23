@@ -2,6 +2,7 @@ import Button from "@/AtomicComponents/Button";
 import Footer from "@/AtomicComponents/Footer";
 import NavBar from "@/AtomicComponents/NavBar";
 import PictureTextDivider from "@/AtomicComponents/PictureTextDivider";
+import Link from "next/link";
 import React from "react";
 import { FaArrowRight } from "react-icons/fa";
 
@@ -42,21 +43,25 @@ const About = () => {
           </p>
 
           <div className="flexsm gap-3 text-[0.8em] font-[700] sm:items-start pt-[1em] sm:w-full flex-wrap">
-            <Button
-              className={
-                "flex items-center gap-1 rounded-full px-[2.5em] py-[1em] text-white bg-primary1 flex-grow justify-center"
-              }
-            >
-              Enroll now <FaArrowRight />
-            </Button>
+            <Link href="/price" className="flex-grow">
+              <Button
+                className={
+                  "flex items-center gap-1 rounded-full px-[2.5em] py-[1em] text-white bg-primary1 w-full justify-center"
+                }
+              >
+                Enroll now <FaArrowRight />
+              </Button>
+            </Link>
 
-            <Button
-              className={
-                "flex items-center gap-1 rounded-full px-[2.5em] py-[0.9em] text-primary1 bg-transparent border-primary1 border-2 flex-grow justify-center"
-              }
-            >
-              Login as a guest
-            </Button>
+            <Link href="" className="flex-grow">
+              <Button
+                className={
+                  "flex items-center gap-1 rounded-full px-[2.5em] py-[0.9em] text-primary1 bg-transparent border-primary1 border-2 w-full justify-center"
+                }
+              >
+                Login as a guest
+              </Button>
+            </Link>
           </div>
         </div>
       </PictureTextDivider>
@@ -82,12 +87,16 @@ const About = () => {
         </div>
       </PictureTextDivider>
 
-          <div className='bg-[#FAFAFA]'>
-          <PictureTextDivider imageUrl={"/about-3.png"} bgColor={"bg-transparent"} imageFirst={true}>
-              <div className="flex flex-col gap-[1.5em] leading-[1.7em] sm:text-[#333] pt-[2em]">
-              <h3 className="text-primary1 font-[700] text-[1.6em]">
-                Overcoming Chalenges
-              </h3>
+      <div className="bg-[#FAFAFA]">
+        <PictureTextDivider
+          imageUrl={"/about-3.png"}
+          bgColor={"bg-transparent"}
+          imageFirst={true}
+        >
+          <div className="flex flex-col gap-[1.5em] leading-[1.7em] sm:text-[#333] pt-[2em]">
+            <h3 className="text-primary1 font-[700] text-[1.6em]">
+              Overcoming Chalenges
+            </h3>
 
             <p className="text-0.9em">
               In Nigeria, we recognize two major factors that hinder the
@@ -103,14 +112,15 @@ const About = () => {
               explore fields like aerospace, astronomy, robotics, computer
               programming, and systems theory.
             </p>
-
-            <Button
-              className={
-                "flex items-center w-fit gap-1 rounded-full px-[2.5em] py-[1em] text-white bg-primary1 sm:w-full sm:justify-center"
-              }
-            >
-              Enroll now <FaArrowRight />
-            </Button>
+            <Link href="/price" className="flex-grow">
+              <Button
+                className={
+                  "flex items-center w-fit gap-1 rounded-full px-[2.5em] py-[1em] text-white bg-primary1 sm:w-full sm:justify-center"
+                }
+              >
+                Enroll now <FaArrowRight />
+              </Button>
+            </Link>
           </div>
         </PictureTextDivider>
       </div>
@@ -182,41 +192,49 @@ const About = () => {
               nurturing curious minds that will shape the future of our world.
             </p>
             <div className=" block flexsm gap-3 text-[0.8em] font-[700] sm:items-start pt-[1em] sm:w-full flex-wrap sm:hidden">
-              <Button
-                className={
-                  "flex items-center gap-1 rounded-full px-[2.5em] py-[1em] text-white bg-primary1 flex-grow justify-center"
-                }
-              >
-                Enroll now <FaArrowRight />
-              </Button>
+              <Link href="/price" className="flex-grow">
+                <Button
+                  className={
+                    "flex items-center gap-1 rounded-full px-[2.5em] py-[1em] text-white bg-primary1 w-full justify-center"
+                  }
+                >
+                  Enroll now <FaArrowRight />
+                </Button>
+              </Link>
 
-              <Button
-                className={
-                  "flex items-center gap-1 rounded-full px-[2.5em] py-[0.9em] text-primary1 bg-transparent border-primary1 border-2 flex-grow justify-center"
-                }
-              >
-                Login as a guest
-              </Button>
+              <Link href="" className="flex-grow">
+                <Button
+                  className={
+                    "flex items-center gap-1 rounded-full px-[2.5em] py-[0.9em] text-primary1 bg-transparent border-primary1 border-2 w-full justify-center"
+                  }
+                >
+                  Login as a guest
+                </Button>
+              </Link>
             </div>
           </div>
         </PictureTextDivider>
         <div className="hidden sm:block w-full sm:px-xpadding">
           <div className="flexsm gap-3 text-[0.8em] font-[700] sm:items-start pt-[1em] sm:w-full flex-wrap bg-[#FAFAFA] pb-[5em]">
-            <Button
-              className={
-                "flex items-center gap-1 rounded-full px-[2.5em] py-[1em] text-white bg-primary1 flex-grow justify-center"
-              }
-            >
-              Enroll now <FaArrowRight />
-            </Button>
+            <Link href="/price" className="flex-grow">
+              <Button
+                className={
+                  "flex items-center gap-1 rounded-full px-[2.5em] py-[1em] text-white bg-primary1 w-full justify-center"
+                }
+              >
+                Enroll now <FaArrowRight />
+              </Button>
+            </Link>
 
-            <Button
-              className={
-                "flex items-center gap-1 rounded-full px-[2.5em] py-[0.9em] text-primary1 bg-transparent border-primary1 border-2 flex-grow justify-center"
-              }
-            >
-              Login as a guest
-            </Button>
+            <Link href="" className="flex-grow">
+              <Button
+                className={
+                  "flex items-center gap-1 rounded-full px-[2.5em] py-[0.9em] text-primary1 bg-transparent border-primary1 w-full border-2 justify-center"
+                }
+              >
+                Login as a guest
+              </Button>
+            </Link>
           </div>
         </div>
       </div>

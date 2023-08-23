@@ -27,7 +27,7 @@ const Price = () => {
             learners and educational institutions, ensuring that the journey of
             curiosity and learning is open to everyone.
           </p>
-          <div className="flexss sm1:justify-center gap-[1em] font-[700] text-[0.8rem] flex-wrap sm1:w-full mt-[2em] p-[0.5em] bg-white rounded-full shadow-md">
+          <div className="flexss sm1:justify-center gap-[1em] font-[700] text-[0.8rem] flex-wrap sm1:w-full mt-[2em] p-[0.5em] bg-white rounded-full shadow-md sm:shadow-none">
             <div
               className="sm:flex flex-grow"
               onClick={() => {
@@ -64,7 +64,7 @@ const Price = () => {
         </div>
 
         <div className="w-full cflexmm gap-[3em]">
-          <div className="w-[90%] cflexmm">
+          <div className="w-[80%] sm:w-full cflexmm">
             <Range
               step={1}
               min={0}

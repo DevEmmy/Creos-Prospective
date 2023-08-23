@@ -6,22 +6,18 @@ import Link from "next/link";
 import Image from "next/image";
 
 const SignUp = () => {
-  const EMAIL_REGEX = /^(\w+)([\.\-]?\w+)*\@(\w+)([\.\-]?\w+)*(\.[a-z|A-Z]+)$/;
-  const PHONE_REGEX =
-    /^([+]?[(]?[0-9]{1,3}?[)]?)?\(?([0-9]{3,4})\)?[\-\.\ ]?([0-9]{3,4})[\-\.\ ]?([0-9]{4})$/;
+  const EMAIL_REGEX = /^(\w+)([\.\-]?\w+)*\@(\w+)([\.\-]?\w+)*(\.[a-z|A-Z]+)$/;  
   const fName = useRef(null);
   const [valid, setValid] = useState(false);
   const [changing, setChanging] = useState(false);
-  const [emailError, setEmailError] = useState(false);
-  const [phoneError, setPhoneError] = useState(false);
+  const [emailError, setEmailError] = useState(false);  
   const [exceedChar, setExceedChar] = useState(false);
   const [passError, setPassError] = useState(false);
   const [hide, setHide] = useState(true);
   const [userDetails, setUserDetails] = useState({
     fullName: "",
     email: "",
-    school: "",
-    phoneNumber: "",
+    productKey: "",    
     password: "",
     country: "",
   });
@@ -34,8 +30,7 @@ const SignUp = () => {
     if (
       userDetails["fullName"].trim().length > 0 &&
       !emailError &&
-      userDetails["school"].trim().length > 0 &&
-      !phoneError &&
+      userDetails["productKey"].trim().length > 0 &&      
       !passError &&
       userDetails["password"].length >= 8
     ) {
@@ -54,19 +49,7 @@ const SignUp = () => {
     ) {
       setEmailError(true);
     }
-
-    if (
-      PHONE_REGEX.test(userDetails["phoneNumber"]) ||
-      userDetails["phoneNumber"].trim().length === 0
-    ) {
-      setPhoneError(false);
-    } else if (
-      !PHONE_REGEX.test(userDetails["phoneNUmber"]) &&
-      userDetails["phoneNumber"].trim().length > 0
-    ) {
-      setPhoneError(true);
-    }
-
+    
     if (
       (userDetails["password"].length >= 8 &&
         /[!@#$%^&*]/.test(userDetails["password"])) ||
@@ -108,7 +91,7 @@ const SignUp = () => {
   const handleChange = (e) => {
     var name = e.target.name;
     var value = e.target.value;
-    if (name === "fullName" || name === "school") {
+    if (name === "fullName") {
       acceptLettersOnly(name, value, 50);
     } else {
       setUserDetails({ ...userDetails, [name]: value });
@@ -122,8 +105,7 @@ const SignUp = () => {
       setUserDetails({
         fullName: "",
         email: "",
-        school: "",
-        phoneNumber: "",
+        productKey: "",        
         password: "",
         country: "",
       });
@@ -227,85 +209,21 @@ const SignUp = () => {
               </div>
 
               <div className="sect">
-                <p>School</p>
+                <p>Product Key</p>
                 <div className="inputCont">
                   <input
                     className="input"
                     type="text"
-                    name="school"
-                    placeholder="School Name"
-                    value={userDetails["school"]}
+                    name="productKey"
+                    placeholder="Product Key"
+                    value={userDetails["productKey"]}
                     onChange={handleChange}
                   />
                 </div>
                 {exceedChar === "school" && (
                   <p className="err">* Can't exceed 50 characters</p>
                 )}
-              </div>
-
-              <div className="block sect sm:hidden">
-                <p>Phone Number</p>
-                <PhoneInput
-                  country={"ng"} // Default country code (optional)
-                  inputStyle={{
-                    width: "100%",
-                    color: "#AAA",
-                    fontSize: "0.7rem",
-                    fontWeight: "400",
-                  }}
-                  inputProps={{
-                    name: "phoneNumber", // Set the name property of the input element
-                  }}
-                  value={userDetails["phoneNumber"]} // Initial phone number value (optional)
-                  onChange={(value, country, event) => {
-                    var name = event.target.name;
-                    setUserDetails({
-                      ...userDetails,
-                      [name]: value,
-                      country: country.name,
-                    });
-                    setChanging(!changing);
-                  }} // Handle phone number changes
-                />
-
-                {phoneError && (
-                  <p className="err">* Fill in a valid phone number</p>
-                )}
-              </div>
-
-              <div className="hidden sm:block sm:min-w-[90%]">
-                <div className="sect">
-                  <p>Phone Number</p>
-                  <PhoneInput
-                    country={"ng"} // Default country code (optional)
-                    inputStyle={{
-                      width: "100%",
-                      color: "#AAA",
-                      fontSize: "1.1rem",
-                      padding: "1.5em 0em 1.5em 2.5em",
-                      fontWeight: "400",
-                    }}
-                    inputProps={{
-                      name: "phoneNumber", // Set the name property of the input element
-                    }}
-                    value={userDetails["phoneNumber"]} // Initial phone number value (optional)
-                    onChange={(value, country, event) => {
-                      var name = event.target.name;
-                      setUserDetails({
-                        ...userDetails,
-                        [name]: value,
-                        country: country.name,
-                      });
-                      setChanging(!changing);
-                    }} // Handle phone number changes
-                  />
-
-                  {phoneError && (
-                    <p className="err">* Fill in a valid phone number</p>
-                  )}
-                </div>
-              </div>
-
+              </div>            
               <div className="sect">
                 <p>Password</p>
                 <div className="inputCont">
@@ -356,7 +274,7 @@ const SignUp = () => {
 
               <button
                 type="submit"
-                className="flexmm gap-[0.5em] rounded-[2em] bg-primary1 px-[2.5em] py-[1em] text-white text-[0.8em] sm:text-[1rem] font-[600] sm:font-[400]"
+                className="flexmm gap-[0.5em] rounded-[2em] bg-primary1 w-[90%] px-[2.5em] py-[1em] text-white text-[0.8em] sm:text-[1rem] font-[600] sm:font-[400]"
                 onClick={handleSubmit}
               >
                 <p>Create account</p>

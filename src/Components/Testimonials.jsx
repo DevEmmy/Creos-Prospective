@@ -114,7 +114,7 @@ const Testimonials = () => {
           </div>
         </div>
         <div className="flexss sm1:justify-center gap-[1em] font-[700] text-[0.8rem] flex-wrap sm1:w-full">
-          <Link href="/signup" className="sm:flex flex-grow">
+          <Link href="/price" className="sm:flex flex-grow">
             <Button className="border-[0.2em] border-primary1 bg-primary1 text-white flexmm gap-[0.5em] px-[2.5em] py-[1em] rounded-full sm:w-full">
               <p>Enroll now</p> <ArrowRightOutline size="1em" />
             </Button>
