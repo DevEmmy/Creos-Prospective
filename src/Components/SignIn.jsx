@@ -184,7 +184,7 @@ const SignIn = () => {
                 </Link>
               </p>
             </div>
-            <div className="flexsm flex-wrap gap-[1em] font-[400] text-[0.8rem] sm:text-[1rem] text-[#344054] w-[93%]">
+            <div className="flexsm flex-wrap gap-[0.5em] font-[400] text-[0.8rem] sm:text-[1rem] text-[#344054] w-[93%]">
               <div className="box">
                 <div className="w-[1.5em] sm:w-[1.2em]">
                   <Image
@@ -195,6 +195,17 @@ const SignIn = () => {
                   />
                 </div>
                 <p>Sign in with Google</p>
+              </div>
+              <div className="box">
+                <div className="w-[1.5em] sm:w-[1.2em]">
+                  <Image
+                    src="outlook.svg"
+                    width={100}
+                    height={100}
+                    alt="google"
+                  />
+                </div>
+                <p>Sign in with Outlook</p>
               </div>
             </div>
           </div>
