@@ -2,6 +2,8 @@ import { useState, useRef, useEffect } from "react";
 import { EyeOutline, EyeOffOutline, ArrowRightOutline } from "heroicons-react";
 import Link from "next/link";
 import Image from "next/image";
+import { studentLogin } from "@/services/request";
+import Cookies from 'js-cookie';
 
 const SignIn = () => {
   const eMail = useRef(null);
@@ -36,15 +38,17 @@ const SignIn = () => {
     setChanging(!changing);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (valid) {
-      setLoginDetails({
-        email: "",
-        password: "",
-      });
+      // setLoginDetails({
+      //   email: "",
+      //   password: "",
+      // });
 
       // ENDPOINT FOR SUBMITTING LOGIN DETAILS
+      await studentLogin(loginDetails.email, loginDetails.password)
+      
     }
   };
   return (
@@ -105,7 +109,7 @@ const SignIn = () => {
               Sign in to continue your learning journey and explore a world of
               endless possibilities.
             </p>
-            <form className="cflexss gap-[1em] w-full">
+            <form className="cflexss gap-[1em] w-full" action="POST">
               <div className="sect">
                 <p>Email address</p>
                 <div className="inputCont">

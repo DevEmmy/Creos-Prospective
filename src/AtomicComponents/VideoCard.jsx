@@ -6,7 +6,7 @@ const VideoCard = ({ image, title, heading, content, author, images, enrolled })
   return (
     <>
       <Link href="/" className="sm:flex-grow">
-        <div className="border border-[1px] border-[#E6E6E6] cflexss gap-[0.5em] p-[0.5em] w-[16em] min-h-[25em] rounded-xl cursor-pointer sm:w-full">
+        <div className=" border-[1px] border-[#E6E6E6] cflexss gap-[0.5em] p-[0.5em] w-[16em] min-h-[25em] rounded-xl cursor-pointer sm:w-full">
           <div className="w-full flexmm">
             <Image
               src={`${image}.svg`}
