@@ -31,35 +31,35 @@ const NavBar = ({active=0, background}) => {
   return (
     <>
         <nav className={`bg-${background ? background : "primary6"} w-full flex justify-between items-center py-[20px] px-xpadding ${showNav && "fixed"}`}>
-            <Link href="/" className="w-[12em] sm:w-[11em]">
+            <a href="/" className="w-[12em] sm:w-[11em]">
               <Image src="/homeLogo.svg" width={100} height={100} alt="CSkidz" />
-            </Link>
+            </a>
 
             <div className='flex gap-[60px] sm:hidden'>
               {
                 nav.map((item, i)=>{
                   return(
-                    <Link href={item.link} key={i} className={active == i ? "font-[800] text-primary1 text-[0.8em]": "text-[0.8em]"}>
+                    <a href={item.link} key={i} className={active == i ? "font-[800] text-primary1 text-[0.8em]": "text-[0.8em]"}>
                       {item.title}
-                    </Link>
+                    </a>
                   )
                 })
               }
             </div>
 
             <div className='w-fit flex gap-6 sm:hidden'>
-              <Link href={"/signup"}>
+              <a href={"/signup"}>
                 <Button className="rounded-[2.2em] border-2 border-primary1 bg-transparent px-[2.5em] py-[1em] text-[0.8em] text-primary1 font-[600]" >
                   Create Free Account
                 </Button>
-              </Link>
+              </a>
               
 
-              <Link href="/signin">
+              <a href="/signin">
                <Button className="rounded-[2em] bg-primary1 px-[2.5em] py-[1em] text-[0.8em] font-[600] text-white">
                 Login
               </Button>
-              </Link>
+              </a>
              
             </div>
 
@@ -78,27 +78,27 @@ const NavBar = ({active=0, background}) => {
               {
                 nav.map((item, i)=>{
                   return(
-                    <Link href={item.link} key={i} className={active == i ? "font-[800] text-primary1 text-[0.8em]": "text-[0.8em]"}>
+                    <a href={item.link} key={i} className={active == i ? "font-[800] text-primary1 text-[0.8em]": "text-[0.8em]"}>
                       {item.title}
-                    </Link>
+                    </a>
                   )
                 })
               }
             </div>
 
             <div className='w-fit flex gap-6 mt-10'>
-              <Link href={"/signup"}>
+              <a href={"/signup"}>
                 <Button className="rounded-[2em] border-2 border-primary1 bg-transparent px-[2em] py-[0.6em] text-[0.8em] text-primary1 font-[600]" >
                   Create Free Account
                 </Button>
-              </Link>
+              </a>
               
 
-              <Link href="/signin">
+              <a href="/signin">
                <Button className="rounded-[2em] bg-primary1 px-[2.5em] py-[0.7em] text-[0.8em] font-[600] text-white">
                 Login
               </Button>
-              </Link>
+              </a>
              
             </div>
             </div>

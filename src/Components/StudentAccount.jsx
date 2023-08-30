@@ -9,6 +9,7 @@ import {
 } from "heroicons-react";
 import Link from "next/link";
 import Image from "next/image";
+import { studentRegister } from "@/services/request";
 
 const StudentAccount = ({ setAccountType }) => {
   const EMAIL_REGEX = /^(\w+)([\.\-]?\w+)*\@(\w+)([\.\-]?\w+)*(\.[a-z|A-Z]+)$/;
@@ -24,7 +25,6 @@ const StudentAccount = ({ setAccountType }) => {
     email: "",
     productKey: "",
     password: "",
-    country: "",
   });
 
   // useEffect(() => {
@@ -92,18 +92,20 @@ const StudentAccount = ({ setAccountType }) => {
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    await studentRegister(userDetails.fullName, userDetails.email, userDetails.productKey, userDetails.password)
     if (valid) {
-      setUserDetails({
-        fullName: "",
-        email: "",
-        productKey: "",
-        password: "",
-        country: "",
-      });
-
+      // setUserDetails({
+      //   fullName: "",
+      //   email: "",
+      //   productKey: "",
+      //   password: "",
+      //   country: "",
+      // });
+      
       // ENDPOINT FOR SUBMITTING USER DETAILS
+      console.log(userDetails)
     }
   };
   return (

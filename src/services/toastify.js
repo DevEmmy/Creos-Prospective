@@ -1,8 +1,11 @@
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-const notify = (text)=>{
-    toast(text)
+export const notify = (text)=>{
+    toast.success(text)
 }
 
-export default notify
+export const notifyError = (text)=>{
+    toast.error(text)
+}
+
