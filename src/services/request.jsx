@@ -1,5 +1,6 @@
 import axios from "axios";
 import {notify, notifyError} from "./toastify";
+//"http://localhost:4030"
 const api = "https://ck-onboarding.onrender.com"
 const kidsDashboard = "https://ck-kids-dashboard.vercel.app/"
 
@@ -12,18 +13,14 @@ export const studentLogin = async (email, password)=>{
         email, password
     })
     .then(response => {
-        console.log(response.data)
+        console.log(response)
         notify(response.data.message)
-        const token = response.data.payload.token
-        if(token){
-            localStorage.setItem('token', token);
-            window.location.href = "/"
-        }
-        
+        window.location.href = "/"
     })
     .catch(err => {
-        notifyError(err.message)
-        console.log(err)})
+        notifyError(err.response.data.message)
+        console.log(err)}
+    )
 }
 
 export const schoolLogin = (email, password)=>{
@@ -33,14 +30,9 @@ export const schoolLogin = (email, password)=>{
     .then(response => {
         console.log(response.data)
         notify(response.data.message)
-        const token = response.data.payload.token
-        if(token){
-            localStorage.setItem('token', token);
-            window.location.href = "/"
-        }
     })
     .catch(err => {
-        notifyError(err.message)
+        notifyError(err.response.data.message)
         console.log(err)}
     )
 }
@@ -58,7 +50,7 @@ export const studentRegister = async (fullName, email, productKey, password)=>{
         }
     })
     .catch(err => {
-        notifyError(err.message)
+        notifyError(err.response.data.message)
         console.log(err)
     })
 }
@@ -75,7 +67,7 @@ export const schoolRegister = async (schoolName, email, password)=>{
         }
     })
     .catch(err => {
-        notifyError(err.message)
+        notifyError(err.response.data.message)
         console.log(err)
     })
 }

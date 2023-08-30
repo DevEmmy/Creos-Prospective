@@ -10,6 +10,7 @@ import {
 import Link from "next/link";
 import Image from "next/image";
 import { studentRegister } from "@/services/request";
+import Loader from "@/AtomicComponents/Loader";
 
 const StudentAccount = ({ setAccountType }) => {
   const EMAIL_REGEX = /^(\w+)([\.\-]?\w+)*\@(\w+)([\.\-]?\w+)*(\.[a-z|A-Z]+)$/;
@@ -20,6 +21,7 @@ const StudentAccount = ({ setAccountType }) => {
   const [exceedChar, setExceedChar] = useState(false);
   const [passError, setPassError] = useState(false);
   const [hide, setHide] = useState(true);
+  const [loading, setLoading] = useState(false)
   const [userDetails, setUserDetails] = useState({
     fullName: "",
     email: "",
@@ -95,6 +97,7 @@ const StudentAccount = ({ setAccountType }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     await studentRegister(userDetails.fullName, userDetails.email, userDetails.productKey, userDetails.password)
+    setLoading(true)
     if (valid) {
       // setUserDetails({
       //   fullName: "",
@@ -107,6 +110,7 @@ const StudentAccount = ({ setAccountType }) => {
       // ENDPOINT FOR SUBMITTING USER DETAILS
       console.log(userDetails)
     }
+    setLoading(false)
   };
   return (
     <>
@@ -233,9 +237,15 @@ const StudentAccount = ({ setAccountType }) => {
             type="submit"
             className="flexmm gap-[0.5em] rounded-[2em] bg-primary1 w-[90%] px-[2.5em] py-[1em] text-white text-[0.8em] sm:text-[1rem] font-[600] sm:font-[400]"
             onClick={handleSubmit}
+            disabled = {loading && true}
           >
-            <p>Create account</p>
-            <ArrowRightOutline size="12px" />
+            {
+                  loading ? <Loader /> :
+                  <>
+                    <p>Create account</p>
+                    <ArrowRightOutline size="12px" />
+                  </>
+            }
           </button>
         </form>
         <div className="text-[0.7rem] sm:text-[0.9rem] font-[400]">

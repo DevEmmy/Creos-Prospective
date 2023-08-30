@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { studentLogin } from "@/services/request";
 import Cookies from 'js-cookie';
+import Loader from "@/AtomicComponents/Loader";
 
 const SignIn = () => {
   const eMail = useRef(null);
@@ -11,6 +12,7 @@ const SignIn = () => {
   const [changing, setChanging] = useState(false);
   const [emailError, setEmailError] = useState(false);
   const [hide, setHide] = useState(true);
+  const [loading, setLoading] = useState(false)
   const [loginDetails, setLoginDetails] = useState({
     email: "",
     password: "",
@@ -40,6 +42,7 @@ const SignIn = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true)
     if (valid) {
       // setLoginDetails({
       //   email: "",
@@ -48,6 +51,7 @@ const SignIn = () => {
 
       // ENDPOINT FOR SUBMITTING LOGIN DETAILS
       await studentLogin(loginDetails.email, loginDetails.password)
+      setLoading(false)
       
     }
   };
@@ -173,9 +177,15 @@ const SignIn = () => {
                 type="submit"
                 className="flexmm gap-[0.5em] rounded-[2em] bg-primary1 px-[2.5em] py-[1em] text-white text-[0.8em] sm:text-[1rem] font-[600] sm:font-[400]"
                 onClick={handleSubmit}
+                disabled = {loading && true}
               >
-                <p>Sign In</p>
-                <ArrowRightOutline size="12px" />
+                {
+                  loading ? <Loader /> :
+                  <>
+                    <p>Sign In</p>
+                    <ArrowRightOutline size="12px" />
+                  </>
+                }
               </button>
             </form>
             <div className="text-[0.7rem] sm:text-[0.9rem] font-[400]">
